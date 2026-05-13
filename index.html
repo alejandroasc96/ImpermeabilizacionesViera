@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imperviera | Soluciones en Impermeabilización</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+
+    <nav class="fixed w-full z-50 glass-nav border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Espacio para el Logo -->
+            <div class="flex items-center space-x-2">
+                <div class="text-2xl font-bold tracking-tighter text-[#0081C9] flex items-center">
+                    <span class="text-3xl mr-1">MI</span>
+                    <div class="flex flex-col leading-none">
+                        <span class="text-xs uppercase tracking-widest text-slate-400">Impermeabilizaciones</span>
+                        <span class="text-lg">Viera</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menú de navegación Desktop -->
+            <div class="hidden md:flex space-x-10 text-sm font-medium uppercase tracking-widest">
+                <a href="#inicio" class="hover:text-[#0081C9] transition-colors">Inicio</a>
+                <a href="#servicios" class="hover:text-[#0081C9] transition-colors">Servicios</a>
+                <a href="#proyectos" class="hover:text-[#0081C9] transition-colors">Trabajos</a>
+                <a href="#empresa" class="hover:text-[#0081C9] transition-colors">La Empresa</a>
+            </div>
+
+            <!-- CTA principal -->
+            <div>
+                <a href="#contacto" class="bg-[#0081C9] text-white px-6 py-3 rounded-md text-sm font-semibold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">
+                    CONTACTAR
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="inicio" class="relative h-screen flex items-center hero-gradient text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
+            <div class="max-w-2xl">
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+                    Protección definitiva <span class="text-[#00B4D8]">contra el agua.</span>
+                </h1>
+                <p class="text-xl text-slate-200 mb-10 leading-relaxed">
+                    Especialistas en impermeabilización técnica para piscinas, techos y aljibes. Soluciones de alta ingeniería con acabados estéticos de vanguardia.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#proyectos" class="bg-white text-slate-900 px-8 py-4 rounded-md font-bold text-center hover:bg-gray-100 transition-all">Ver Proyectos</a>
+                    <a href="#servicios" class="border border-white/30 backdrop-blur-sm px-8 py-4 rounded-md font-bold text-center hover:bg-white/10 transition-all">Nuestros Servicios</a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+            <i class="fa-solid fa-chevron-down text-2xl"></i>
+        </div>
+    </header>
+
+    <section id="servicios" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-xs uppercase tracking-[0.3em] text-[#0081C9] font-bold mb-4">Especialidades</h2>
+                <p class="text-3xl md:text-4xl font-bold text-slate-900">Soluciones Técnicas de Estanqueidad</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Servicio 1: Piscinas -->
+                <div class="p-10 bg-slate-50 rounded-2xl hover-lift border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-100 text-[#0081C9] rounded-xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fa-solid fa-water-ladder"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Impermeabilización de Piscinas</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">Aplicación de resinas y gelcoats de polímero isoftálico. Recuperamos la estanqueidad y el color de su piscina con materiales de alta gama.</p>
+                    <ul class="text-sm space-y-2 text-slate-500">
+                        <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Resinas de primera calidad</li>
+                        <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Pinturas transitables</li>
+                        <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Garantía de estanqueidad</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 2: Cubiertas -->
+                <div class="p-10 bg-slate-50 rounded-2xl hover-lift border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-100 text-[#0081C9] rounded-xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fa-solid fa-house-chimney-crack"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Techos y Cubiertas</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">Tratamiento integral para azoteas y techos industriales. Uso de fibra de vidrio y morteros cementosos de marcas líderes (Weber, Sika).</p>
+                    <ul class="text-sm space-y-2 text-slate-500">
+                        <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Naves industriales</li>
+                        <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Azoteas transitables</li>
+                        <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Canalización de aguas</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 3: Aljibes -->
+                <div class="p-10 bg-slate-50 rounded-2xl hover-lift border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-100 text-[#0081C9] rounded-xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Aljibes y Depósitos</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">Especialistas en depósitos de agua potable. Reparación y mantenimiento con materiales químicos certificados para uso alimentario.</p>
+                    <ul class="text-sm space-y-2 text-slate-500">
+                        <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Reparación de depósitos</li>
+                        <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Certificación de materiales</li>
+                        <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Mantenimiento preventivo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+            <h2 class="text-xs uppercase tracking-[0.3em] text-[#00B4D8] font-bold mb-4">Nuestro Portfolio</h2>
+            <p class="text-3xl font-bold">Proyectos Recientes</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+            <!-- Proyecto 1 -->
+            <div class="group relative overflow-hidden h-80">
+                <img src="https://images.unsplash.com/photo-1533221216503-49033486a422?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                <div class="absolute inset-0 bg-blue-600/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-6 text-center">
+                    <span class="text-xs uppercase tracking-widest mb-2">Comunidad</span>
+                    <h4 class="font-bold text-lg">Piscina Residencial</h4>
+                </div>
+            </div>
+            <!-- Proyecto 2 -->
+            <div class="group relative overflow-hidden h-80">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                <div class="absolute inset-0 bg-blue-600/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-6 text-center">
+                    <span class="text-xs uppercase tracking-widest mb-2">Industrial</span>
+                    <h4 class="font-bold text-lg">Cubierta Nave Logística</h4>
+                </div>
+            </div>
+            <!-- Proyecto 3 -->
+            <div class="group relative overflow-hidden h-80">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                <div class="absolute inset-0 bg-blue-600/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-6 text-center">
+                    <span class="text-xs uppercase tracking-widest mb-2">Hotelero</span>
+                    <h4 class="font-bold text-lg">Spa & Wellness</h4>
+                </div>
+            </div>
+            <!-- Proyecto 4 -->
+            <div class="group relative overflow-hidden h-80">
+                <img src="https://images.unsplash.com/photo-1613484290021-8eb99d2FAECF?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                <div class="absolute inset-0 bg-blue-600/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-6 text-center">
+                    <span class="text-xs uppercase tracking-widest mb-2">Público</span>
+                    <h4 class="font-bold text-lg">Aljibes Municipales</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:row-reverse lg:flex-row">
+                <!-- Info de contacto -->
+                <div class="lg:w-2/5 bg-[#0081C9] p-12 text-white">
+                    <h2 class="text-3xl font-bold mb-8 text-white">Hablemos de su proyecto</h2>
+                    <p class="text-blue-100 mb-12">Estamos listos para ofrecerle la mejor solución técnica en impermeabilización.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="mt-1"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <p class="font-bold">Dirección</p>
+                                <p class="text-blue-100 text-sm">C/ La Mareta 13, 35200 San Gregorio Telde, Gran Canaria</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="mt-1"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <p class="font-bold">Teléfono</p>
+                                <p class="text-blue-100 text-sm">+34 650 841 541</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="mt-1"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <p class="font-bold">Email</p>
+                                <p class="text-blue-100 text-sm">imperviera@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="lg:w-3/5 p-12">
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs uppercase font-bold text-slate-400 mb-2">Nombre Completo</label>
+                                <input type="text" placeholder="Ej: Juan Pérez" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-0 outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase font-bold text-slate-400 mb-2">Correo Electrónico</label>
+                                <input type="email" placeholder="email@ejemplo.com" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-0 outline-none transition-all">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase font-bold text-slate-400 mb-2">Servicio de interés</label>
+                            <select class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none appearance-none bg-white">
+                                <option>Impermeabilización de Piscinas</option>
+                                <option>Tratamiento de Techos</option>
+                                <option>Reparación de Aljibes</option>
+                                <option>Otro</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase font-bold text-slate-400 mb-2">Mensaje</label>
+                            <textarea rows="4" placeholder="Cuéntenos sobre su problema de filtración..." class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none transition-all"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-[#0081C9] text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">
+                            SOLICITAR PRESUPUESTO GRATUITO
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white py-12 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="text-xl font-bold tracking-tighter text-[#0081C9] mb-4 md:mb-0">
+                MI <span class="text-slate-400 font-normal">Imperviera</span>
+            </div>
+            <div class="text-slate-400 text-sm">
+                &copy; 2026 Imperviera. Todos los derechos reservados.
+            </div>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="text-slate-400 hover:text-blue-600 transition-colors text-xl"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="text-slate-400 hover:text-blue-600 transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="text-slate-400 hover:text-blue-600 transition-colors text-xl"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const messageBox = document.createElement('div');
+            messageBox.className = 'fixed bottom-10 right-10 bg-green-600 text-white px-6 py-4 rounded-xl shadow-2xl z-50 animate-bounce';
+            messageBox.innerText = '¡Mensaje enviado con éxito! Nos contactaremos pronto.';
+            document.body.appendChild(messageBox);
+            setTimeout(() => messageBox.remove(), 4000);
+            this.reset();
+        });
+    </script>
+</body>
+</html>

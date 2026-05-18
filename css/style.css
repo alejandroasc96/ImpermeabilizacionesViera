@@ -33,38 +33,57 @@
      background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
  }
 
- /* Animación para el scroll infinito de logos */
- @keyframes scroll {
-     0% {
-         transform: translateX(0);
-     }
+/* ==========================================
+   SCROLL INFINITO CLIENTES - CORREGIDO
+========================================== */
 
-     100% {
-         transform: translateX(calc(-250px * 11))
-     }
- }
-
- .logo-slider {
-     display: flex;
-     width: calc(250px * 22);
-     animation: scroll 40s linear infinite;
- }
-
- .logo-slider:hover {
-     animation-play-state: paused;
- }
-
- @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+.logo-slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex; 
 }
 
-.animate-marquee {
-    display: flex;
-    animation: marquee 20s linear infinite;
+.logo-slider {
+    display: flex;        
+    flex-wrap: nowrap;    
+    width: fit-content;   
+    animation: logo-scroll 30s linear infinite; /* Tiempo que tarda una vuelta completa */
 }
 
-/* Opcional: pausar al pasar el ratón */
-.animate-marquee:hover {
+/* Si el usuario pasa el ratón por encima, el carrusel se frena */
+.logo-slider:hover {
     animation-play-state: paused;
+}
+
+.logo-slider-group {
+    display: flex;        
+    flex-wrap: nowrap;
+    flex-shrink: 0;       
+}
+
+/* ESTO ES LO QUE FALTABA PARA EVITAR QUE SALGAN EN VERTICAL: */
+.logo-item {
+    width: 250px;         /* Ancho idéntico al que tenía el archivo original */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;      /* Espaciado lateral equivalente al px-10 original */
+    flex-shrink: 0;
+}
+
+.logo-item img {
+    height: 40px;         /* Altura idéntica al diseño base */
+    object-contain: contain;
+}
+
+/* LA ANIMACIÓN QUE HACE EL LOOP INFINITO FLUIDO: */
+@keyframes logo-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Se desplaza exactamente el 50% (un grupo completo de logos) */
+        transform: translateX(-50%);
+    }
 }

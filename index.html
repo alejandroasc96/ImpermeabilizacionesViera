@@ -1,275 +1,1180 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imperviera | Soluciones en Impermeabilización</title>
+    <title>Imperviera | Especialistas en Resina de Poliéster</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <!-- # ========================================== -->
+    <!-- # region ESTILOS PERSONALIZADOS -->
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
         .glass-nav {
             background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        /* Transiciones suaves para el filtrado */
+        .gallery-item {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-item.hidden {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+        }
+
+        /* Decoración de fondo para diferenciar secciones */
+        .bg-dots {
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
         .hero-gradient {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&q=80&w=2070');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
         }
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        /* Animación para el scroll infinito de logos */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-250px * 11))
+            }
         }
-        .hover-lift:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+
+        .logo-slider {
+            display: flex;
+            width: calc(250px * 22);
+            animation: scroll 40s linear infinite;
+        }
+
+        .logo-slider:hover {
+            animation-play-state: paused;
         }
     </style>
+    <!-- # endregion -->
 </head>
+
 <body class="bg-white text-slate-900 antialiased">
 
-    <nav class="fixed w-full z-50 glass-nav border-b border-gray-100">
+    <!-- # ========================================== -->
+    <!-- # region NAVEGACION -->
+    <!-- # ========================================== -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-slate-100 bg-white/80 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <!-- Espacio para el Logo -->
-            <div class="flex items-center space-x-2">
-                <div class="text-2xl font-bold tracking-tighter text-[#0081C9] flex items-center">
-                    <span class="text-3xl mr-1">MI</span>
-                    <div class="flex flex-col leading-none">
-                        <span class="text-xs uppercase tracking-widest text-slate-400">Impermeabilizaciones</span>
-                        <span class="text-lg">Viera</span>
-                    </div>
-                </div>
+
+            <div class="flex items-center">
+                <a href="#inicio" class="flex items-center gap-2 group cursor-pointer">
+                    <div
+                        class="w-10 h-10 bg-[#0081C9] rounded-lg flex items-center justify-center text-white font-bold text-xl transition-transform group-hover:rotate-12">
+                        I</div>
+                    <span class="font-bold text-base sm:text-xl tracking-tight text-slate-800">IMPERVIERA</span>
+                </a>
             </div>
 
-            <!-- Menú de navegación Desktop -->
-            <div class="hidden md:flex space-x-10 text-sm font-medium uppercase tracking-widest">
+            <div
+                class="hidden lg:flex space-x-8 xl:space-x-10 text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
                 <a href="#inicio" class="hover:text-[#0081C9] transition-colors">Inicio</a>
                 <a href="#servicios" class="hover:text-[#0081C9] transition-colors">Servicios</a>
-                <a href="#proyectos" class="hover:text-[#0081C9] transition-colors">Trabajos</a>
-                <a href="#empresa" class="hover:text-[#0081C9] transition-colors">La Empresa</a>
+                <a href="#proyectos" class="hover:text-[#0081C9] transition-colors">Proyectos</a>
+                <a href="#proceso" class="hover:text-[#0081C9] transition-colors">La Resina</a>
             </div>
 
-            <!-- CTA principal -->
-            <div>
-                <a href="#contacto" class="bg-[#0081C9] text-white px-6 py-3 rounded-md text-sm font-semibold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">
-                    CONTACTAR
+            <div class="flex items-center gap-3">
+                <a href="#contacto"
+                    class="hidden lg:inline-block bg-[#0081C9] text-white px-6 py-3 rounded-full text-[11px] font-black uppercase tracking-widest hover:bg-blue-700 transition-all shadow-lg shadow-blue-200/50">
+                    PRESUPUESTO GRATIS
+                </a>
+
+                <a href="tel:+34650841541"
+                    class="lg:hidden bg-[#0081C9] text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-700 transition-all shadow-md shadow-blue-200">
+                    <i class="fa-solid fa-phone text-sm"></i>
+                </a>
+
+                <button onclick="toggleMobileMenu()" id="menu-btn"
+                    class="lg:hidden text-slate-700 p-2 focus:outline-none" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars text-xl transition-transform duration-300" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="lg:hidden max-h-0 overflow-hidden bg-white/95 backdrop-blur-lg border-t border-slate-100 transition-all duration-300 ease-in-out">
+            <div class="px-6 py-6 flex flex-col space-y-4 text-xs font-bold uppercase tracking-widest text-slate-600">
+                <a href="#inicio" onclick="toggleMobileMenu()"
+                    class="py-2 border-b border-slate-50 hover:text-[#0081C9]">Inicio</a>
+                <a href="#servicios" onclick="toggleMobileMenu()"
+                    class="py-2 border-b border-slate-50 hover:text-[#0081C9]">Servicios</a>
+                <a href="#proyectos" onclick="toggleMobileMenu()"
+                    class="py-2 border-b border-slate-50 hover:text-[#0081C9]">Proyectos</a>
+                <a href="#proceso" onclick="toggleMobileMenu()"
+                    class="py-2 border-b border-slate-50 hover:text-[#0081C9]">La Resina</a>
+                <a href="#contacto" onclick="toggleMobileMenu()"
+                    class="bg-[#0081C9] text-white text-center py-3.5 rounded-xl text-[11px] font-black tracking-widest block mt-2">
+                    SOLICITAR VISITA GRATIS
                 </a>
             </div>
         </div>
     </nav>
+    <!-- # endregion -->
 
-    <header id="inicio" class="relative h-screen flex items-center hero-gradient text-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
-            <div class="max-w-2xl">
-                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
-                    Protección definitiva <span class="text-[#00B4D8]">contra el agua.</span>
+    <!-- # ========================================== -->
+    <!-- # region HERO SECTION -->
+    <!-- # ========================================== -->
+    <header id="inicio"
+        class="relative min-h-screen flex items-center bg-gradient-to-tr from-sky-100/70 via-blue-50 to-sky-50/40 overflow-hidden pt-28 pb-12 lg:pt-24">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-white/40 skew-x-12 transform translate-x-20 hidden lg:block">
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center relative z-10">
+
+            <div class="w-full order-1">
+                <div
+                    class="inline-flex items-center gap-2 bg-blue-50 text-[#0081C9] px-3 py-1.5 rounded-full text-[9px] font-bold uppercase tracking-wider mb-4 md:mb-6 border border-blue-100">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
+                    </span>
+                    Disponible en toda Gran Canaria
+                </div>
+
+                <h1
+                    class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1] md:leading-[0.9] mb-4 lg:mb-8 text-slate-900 tracking-tighter">
+                    Adiós a las<br><span class="text-[#0081C9]">Fugas.</span>
                 </h1>
-                <p class="text-xl text-slate-200 mb-10 leading-relaxed">
-                    Especialistas en impermeabilización técnica para piscinas, techos y aljibes. Soluciones de alta ingeniería con acabados estéticos de vanguardia.
+            </div>
+
+            <div class="w-full order-2 lg:order-2 relative px-2 sm:px-6 lg:px-0 my-2 lg:my-0">
+                <div class="relative rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto lg:max-w-none">
+                    <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&q=80&w=1000"
+                        class="object-cover h-[240px] sm:h-[400px] lg:h-[600px] w-full hover:scale-105 transition-transform duration-1000"
+                        alt="Piscina impermeabilizada">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent"></div>
+                </div>
+
+                <div
+                    class="absolute -top-3 -right-1 sm:-top-6 sm:-right-4 bg-white p-3 sm:p-5 shadow-lg rounded-xl border border-slate-50 scale-85 sm:scale-100 origin-top-right">
+                    <div class="flex items-center gap-2 sm:gap-3">
+                        <div class="text-2xl sm:text-4xl font-bold text-[#0081C9]">25</div>
+                        <div
+                            class="text-[8px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-tight">
+                            Años de<br>Experiencia</div>
+                    </div>
+                </div>
+
+                <div
+                    class="absolute -bottom-4 left-4 sm:-bottom-8 sm:-left-4 bg-[#0081C9] py-3 px-5 sm:p-6 shadow-lg rounded-lg text-white scale-90 sm:scale-100 origin-bottom-left">
+                    <p class="text-[8px] sm:text-xs font-bold uppercase tracking-widest opacity-90">Garantía Imperviera
+                    </p>
+                    <p class="text-sm sm:text-xl font-bold whitespace-nowrap">100% Estanqueidad</p>
+                </div>
+            </div>
+
+            <div class="w-full order-3 lg:order-1 lg:mt-0 mt-4">
+                <p class="text-base md:text-xl text-slate-600 mb-6 lg:mb-10 leading-relaxed max-w-lg">
+                    No solo tapamos grietas. Aplicamos <span
+                        class="font-bold text-slate-900 border-b-2 border-blue-200">tecnología de resinas
+                        isoftálicas</span> para una estanqueidad perpetua en piscinas y cubiertas.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#proyectos" class="bg-white text-slate-900 px-8 py-4 rounded-md font-bold text-center hover:bg-gray-100 transition-all">Ver Proyectos</a>
-                    <a href="#servicios" class="border border-white/30 backdrop-blur-sm px-8 py-4 rounded-md font-bold text-center hover:bg-white/10 transition-all">Nuestros Servicios</a>
+
+                <div class="grid grid-cols-2 gap-4 mb-6 lg:mb-10">
+                    <div class="flex items-center gap-2.5">
+                        <div
+                            class="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-[#0081C9] shrink-0">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <span class="text-[11px] sm:text-xs font-bold text-slate-700 uppercase tracking-tight">Visita
+                            Gratis</span>
+                    </div>
+                    <div class="flex items-center gap-2.5">
+                        <div
+                            class="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-[#0081C9] shrink-0">
+                            <i class="fa-solid fa-file-invoice-dollar text-xs"></i>
+                        </div>
+                        <span
+                            class="text-[11px] sm:text-xs font-bold text-slate-700 uppercase tracking-tight">Presupuesto
+                            24h</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
+                    <a href="#contacto"
+                        class="bg-slate-900 text-white text-center px-6 py-4 rounded-md text-xs font-bold hover:bg-slate-800 transition-all shadow-md tracking-[0.15em] uppercase">
+                        Solicitar Visita Ahora
+                    </a>
+                    <a href="#proyectos"
+                        class="group flex items-center justify-center gap-2 font-bold text-xs tracking-widest text-slate-500 hover:text-blue-600 transition-all py-2">
+                        VER ÚLTIMOS TRABAJOS
+                        <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <!-- # endregion -->
+
+    <!-- # ========================================== -->
+    <!-- # region SECCIÓN CLIENTES (NUEVA) -->
+    <!-- # ========================================== -->
+    <section class="py-12 bg-white border-b border-slate-100 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 mb-8">
+            <h2 class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 text-center">
+                Empresas y comunidades que confían en nosotros
+            </h2>
+        </div>
+
+        <div class="relative flex overflow-x-hidden">
+            <div class="logo-slider flex items-center">
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/hotel-reina-isabel.png" alt="Hotel Reina Isabel" class="h-10 object-contain">
+                </div>
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/beach-club.png" alt="Beach Club" class="h-10 object-contain">
+                </div>
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/ipanema.png" alt="Ipanema" class="h-10 object-contain">
+                </div>
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/hotel-europa.png" alt="Hotel Europa" class="h-8 object-contain">
+                </div>
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/las-nasas.png" alt="Las Nasas" class="h-10 object-contain">
+                </div>
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/aguacanis.png" alt="Aguacanis" class="h-10 object-contain">
+                </div>
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/ascona.png" alt="Ascona" class="h-10 object-contain">
+                </div>
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/las-marinas.png" alt="Las Marinas" class="h-10 object-contain">
+                </div>
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/los-porches.png" alt="Los Porches" class="h-10 object-contain">
+                </div>
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/roca-mar.png" alt="Roca Mar" class="h-10 object-contain">
+                </div>
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/timanfaya.png" alt="Timanfaya" class="h-10 object-contain">
+                </div>
+
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/hotel-reina-isabel.png" alt="Hotel Reina Isabel" class="h-10 object-contain">
+                </div>
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/beach-club.png" alt="Beach Club" class="h-10 object-contain">
+                </div>
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/ipanema.png" alt="Ipanema" class="h-10 object-contain">
+                </div>
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/hotel-europa.png" alt="Hotel Europa" class="h-8 object-contain">
+                </div>
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/las-nasas.png" alt="Las Nasas" class="h-10 object-contain">
+                </div>
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/aguacanis.png" alt="Aguacanis" class="h-10 object-contain">
+                </div>
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/ascona.png" alt="Ascona" class="h-10 object-contain">
+                </div>
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/las-marinas.png" alt="Las Marinas" class="h-10 object-contain">
+                </div>
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/los-porches.png" alt="Los Porches" class="h-10 object-contain">
+                </div>
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/roca-mar.png" alt="Roca Mar" class="h-10 object-contain">
+                </div>
+                <div
+                    class="w-[250px] flex justify-center px-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <img src="img/logos/timanfaya.png" alt="Timanfaya" class="h-10 object-contain">
                 </div>
             </div>
         </div>
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
-            <i class="fa-solid fa-chevron-down text-2xl"></i>
-        </div>
-    </header>
+    </section>
 
-    <section id="servicios" class="py-24 bg-white">
+    <!-- # region SERVICIOS -->
+    <section id="servicios" class="py-32 bg-white relative">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <h2 class="text-xs uppercase tracking-[0.3em] text-[#0081C9] font-bold mb-4">Especialidades</h2>
-                <p class="text-3xl md:text-4xl font-bold text-slate-900">Soluciones Técnicas de Estanqueidad</p>
+            <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+                <div class="max-w-2xl">
+                    <h2 class="text-xs uppercase tracking-[0.4em] text-[#0081C9] font-black mb-4">Soluciones Técnicas
+                    </h2>
+                    <p class="text-5xl font-black text-slate-900 tracking-tighter leading-tight">
+                        Donde hay agua, nosotros ponemos
+                        <span class="relative inline-block px-2">
+                            <span class="relative z-10 text-white">control</span>
+                            <span
+                                class="absolute inset-0 bg-[#0081C9] rounded-lg -rotate-1 transform scale-y-110 scale-x-105 shadow-lg shadow-blue-100"></span>
+                        </span>.
+                    </p>
+                </div>
+                <p class="text-slate-500 text-sm max-w-xs border-l-2 border-blue-600 pl-6 mb-2">
+                    Utilizamos resinas termoestables de alta resistencia química y mecánica, ideales para el clima de
+                    Canarias.
+                </p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Servicio 1: Piscinas -->
-                <div class="p-10 bg-slate-50 rounded-2xl hover-lift border border-gray-100">
-                    <div class="w-14 h-14 bg-blue-100 text-[#0081C9] rounded-xl flex items-center justify-center mb-6 text-2xl">
-                        <i class="fa-solid fa-water-ladder"></i>
+                <!-- Servicio 1 -->
+                <div
+                    class="group bg-slate-50 p-10 rounded-[2rem] hover:bg-[#0081C9] transition-all duration-500 hover:-translate-y-2 shadow-sm hover:shadow-2xl hover:shadow-blue-200">
+                    <div
+                        class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-water-ladder text-2xl text-[#0081C9]"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Impermeabilización de Piscinas</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6">Aplicación de resinas y gelcoats de polímero isoftálico. Recuperamos la estanqueidad y el color de su piscina con materiales de alta gama.</p>
-                    <ul class="text-sm space-y-2 text-slate-500">
-                        <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Resinas de primera calidad</li>
-                        <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Pinturas transitables</li>
-                        <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Garantía de estanqueidad</li>
-                    </ul>
+                    <h3 class="text-2xl font-black mb-4 group-hover:text-white transition-colors">Piscinas</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed group-hover:text-blue-50 transition-colors">
+                        Revestimientos con <strong>Resina de Poliéster</strong> reforzada con fibra de vidrio. Acabados
+                        en Gelcoat de cualquier color para un brillo eterno.
+                    </p>
                 </div>
 
-                <!-- Servicio 2: Cubiertas -->
-                <div class="p-10 bg-slate-50 rounded-2xl hover-lift border border-gray-100">
-                    <div class="w-14 h-14 bg-blue-100 text-[#0081C9] rounded-xl flex items-center justify-center mb-6 text-2xl">
-                        <i class="fa-solid fa-house-chimney-crack"></i>
+                <!-- Servicio 2 -->
+                <div
+                    class="group bg-slate-50 p-10 rounded-[2rem] hover:bg-[#0081C9] transition-all duration-500 hover:-translate-y-2 shadow-sm hover:shadow-2xl hover:shadow-blue-200">
+                    <div
+                        class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-house-chimney-window text-2xl text-[#0081C9]"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Techos y Cubiertas</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6">Tratamiento integral para azoteas y techos industriales. Uso de fibra de vidrio y morteros cementosos de marcas líderes (Weber, Sika).</p>
-                    <ul class="text-sm space-y-2 text-slate-500">
-                        <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Naves industriales</li>
-                        <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Azoteas transitables</li>
-                        <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Canalización de aguas</li>
-                    </ul>
+                    <h3 class="text-2xl font-black mb-4 group-hover:text-white transition-colors">Techos y Terrazas</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed group-hover:text-blue-50 transition-colors">
+                        Sistemas transitables para azoteas. Olvídese de las telas asfálticas que se cuartean con el sol;
+                        nuestra resina es una sola pieza.
+                    </p>
                 </div>
 
-                <!-- Servicio 3: Aljibes -->
-                <div class="p-10 bg-slate-50 rounded-2xl hover-lift border border-gray-100">
-                    <div class="w-14 h-14 bg-blue-100 text-[#0081C9] rounded-xl flex items-center justify-center mb-6 text-2xl">
-                        <i class="fa-solid fa-droplet"></i>
+                <!-- Servicio 3 -->
+                <div
+                    class="group bg-slate-50 p-10 rounded-[2rem] hover:bg-[#0081C9] transition-all duration-500 hover:-translate-y-2 shadow-sm hover:shadow-2xl hover:shadow-blue-200">
+                    <div
+                        class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-droplet text-2xl text-[#0081C9]"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Aljibes y Depósitos</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6">Especialistas en depósitos de agua potable. Reparación y mantenimiento con materiales químicos certificados para uso alimentario.</p>
-                    <ul class="text-sm space-y-2 text-slate-500">
-                        <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Reparación de depósitos</li>
-                        <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Certificación de materiales</li>
-                        <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Mantenimiento preventivo</li>
-                    </ul>
+                    <h3 class="text-2xl font-black mb-4 group-hover:text-white transition-colors">Aljibes</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed group-hover:text-blue-50 transition-colors">
+                        Impermeabilización alimentaria. Productos certificados para el contacto con agua potable,
+                        garantizando higiene y cero filtraciones.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
+    <!-- # endregion -->
 
-    <section id="proyectos" class="py-24 bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-6 text-center mb-16">
-            <h2 class="text-xs uppercase tracking-[0.3em] text-[#00B4D8] font-bold mb-4">Nuestro Portfolio</h2>
-            <p class="text-3xl font-bold">Proyectos Recientes</p>
-        </div>
+    <!-- # ========================================== -->
+    <!-- # region PROYECTOS (GALERIA INTERACTIVA) -->
+    <!-- # ========================================== -->
+    <section id="proyectos" class="py-10 bg-slate-900 text-white overflow-hidden relative">
+        <div class="absolute left-0 top-0 w-64 h-64 bg-blue-600/10 blur-[120px] rounded-full"></div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-            <!-- Proyecto 1 -->
-            <div class="group relative overflow-hidden h-80">
-                <img src="https://images.unsplash.com/photo-1533221216503-49033486a422?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
-                <div class="absolute inset-0 bg-blue-600/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-6 text-center">
-                    <span class="text-xs uppercase tracking-widest mb-2">Comunidad</span>
-                    <h4 class="font-bold text-lg">Piscina Residencial</h4>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-xs uppercase tracking-[0.5em] text-blue-400 font-black mb-6">Portfolio Real</h2>
+                <p class="text-5xl font-black mb-12 tracking-tighter text-white">Nuestra huella en las islas</p>
+
+                <div class="flex flex-wrap justify-center gap-2 mb-16">
+                    <button onclick="filterGallery('todos')" data-category="todos"
+                        class="filter-btn active bg-blue-600 text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-all">Todos</button>
+                    <button onclick="filterGallery('piscina')" data-category="piscina"
+                        class="filter-btn bg-white/5 hover:bg-white/10 text-slate-300 px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-all">Piscinas</button>
+                    <button onclick="filterGallery('azotea')" data-category="azotea"
+                        class="filter-btn bg-white/5 hover:bg-white/10 text-slate-300 px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-all">Techos</button>
+                    <button onclick="filterGallery('aljibe')" data-category="aljibe"
+                        class="filter-btn bg-white/5 hover:bg-white/10 text-slate-300 px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-all">Aljibes</button>
                 </div>
             </div>
-            <!-- Proyecto 2 -->
-            <div class="group relative overflow-hidden h-80">
-                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
-                <div class="absolute inset-0 bg-blue-600/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-6 text-center">
-                    <span class="text-xs uppercase tracking-widest mb-2">Industrial</span>
-                    <h4 class="font-bold text-lg">Cubierta Nave Logística</h4>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+
+                <div onclick="openLightbox(this)"
+                    class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
+                    <img src="img/piscinas/fotos-pool-1-min.jpg" alt="Piscina Nocturna"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <span
+                            class="text-[9px] font-black text-blue-400 uppercase tracking-[0.2em] mb-2 block">Iluminación
+                            LED</span>
+                        <h4 class="text-xl font-black text-white leading-tight">Vista Nocturna Premium</h4>
+                    </div>
                 </div>
-            </div>
-            <!-- Proyecto 3 -->
-            <div class="group relative overflow-hidden h-80">
-                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
-                <div class="absolute inset-0 bg-blue-600/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-6 text-center">
-                    <span class="text-xs uppercase tracking-widest mb-2">Hotelero</span>
-                    <h4 class="font-bold text-lg">Spa & Wellness</h4>
+
+                <div onclick="openLightbox(this)"
+                    class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
+                    <img src="img/piscinas/Piscina_impermeabilizada.jpeg" alt="Piscina Terminada"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <span class="text-[9px] font-black text-blue-400 uppercase tracking-[0.2em] mb-2 block">Resina
+                            Isoftálica</span>
+                        <h4 class="text-xl font-black text-white leading-tight">Acabado Azul Cielo</h4>
+                    </div>
                 </div>
-            </div>
-            <!-- Proyecto 4 -->
-            <div class="group relative overflow-hidden h-80">
-                <img src="https://images.unsplash.com/photo-1613484290021-8eb99d2FAECF?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
-                <div class="absolute inset-0 bg-blue-600/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-6 text-center">
-                    <span class="text-xs uppercase tracking-widest mb-2">Público</span>
-                    <h4 class="font-bold text-lg">Aljibes Municipales</h4>
+
+                <div onclick="openLightbox(this)"
+                    class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
+                    <img src="img/piscinas/APT-AMAZONAS-min.jpg" alt="Amazonas Blanco"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <span class="text-[9px] font-black text-blue-400 uppercase tracking-[0.2em] mb-2 block">Apt.
+                            Amazonas</span>
+                        <h4 class="text-xl font-black text-white leading-tight">Revestimiento en Blanco</h4>
+                    </div>
                 </div>
+
+                <div onclick="openLightbox(this)"
+                    class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
+                    <img src="img/piscinas/APT-AMAZONAS-2-min.jpg" alt="Amazonas Llenado"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <span class="text-[9px] font-black text-blue-400 uppercase tracking-[0.2em] mb-2 block">Garantía
+                            Estanqueidad</span>
+                        <h4 class="text-xl font-black text-white leading-tight">Puesta en Marcha</h4>
+                    </div>
+                </div>
+
+                <div onclick="openLightbox(this)"
+                    class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
+                    <img src="img/piscinas/APT-ORINOCO-min.jpg" alt="Orinoco"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <span class="text-[9px] font-black text-blue-400 uppercase tracking-[0.2em] mb-2 block">Apt.
+                            Orinoco</span>
+                        <h4 class="text-xl font-black text-white leading-tight">Proyecto Integral</h4>
+                    </div>
+                </div>
+
+                <div onclick="openLightbox(this)"
+                    class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
+                    <img src="img/piscinas/APT.ATAITANA-min.jpg" alt="Ataitana"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <span class="text-[9px] font-black text-blue-400 uppercase tracking-[0.2em] mb-2 block">Complejo
+                            Ataitana</span>
+                        <h4 class="text-xl font-black text-white leading-tight">Rehabilitación de Vaso</h4>
+                    </div>
+                </div>
+
+                <div onclick="openLightbox(this)"
+                    class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
+                    <img src="img/piscinas/TALASO-GP-1-min.jpg" alt="Talasoterapia"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <span class="text-[9px] font-black text-blue-400 uppercase tracking-[0.2em] mb-2 block">Centro
+                            Talaso</span>
+                        <h4 class="text-xl font-black text-white leading-tight">Aplicación de Fibra</h4>
+                    </div>
+                </div>
+
+                <div onclick="openLightbox(this)"
+                    class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
+                    <img src="img/piscinas/TALASO-GP-2-min.jpg" alt="Talasoterapia Detalle"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <span class="text-[9px] font-black text-blue-400 uppercase tracking-[0.2em] mb-2 block">Detalles
+                            Técnicos</span>
+                        <h4 class="text-xl font-black text-white leading-tight">Acabado Gelcoat Blanco</h4>
+                    </div>
+                </div>
+
+                <div onclick="openLightbox(this)"
+                    class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
+                    <img src="img/piscinas/TALASO-GP-3-min.jpg" alt="Talasoterapia Panorámica"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <span class="text-[9px] font-black text-blue-400 uppercase tracking-[0.2em] mb-2 block">Grandes
+                            Superficies</span>
+                        <h4 class="text-xl font-black text-white leading-tight">Infraestructura Hidráulica</h4>
+                    </div>
+                </div>
+
+                <!-- Azoteas -->
+                <div onclick="openLightbox(this)"
+                    class="gallery-item azotea relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
+                    <img src="img/azotea/PRIV.jpg" alt="Proyecto Privado"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <span
+                            class="text-[9px] font-black text-blue-400 uppercase tracking-[0.2em] mb-2 block">Residencial
+                            Privado</span>
+                        <h4 class="text-xl font-black text-white leading-tight">Impermeabilización de Azotea</h4>
+                    </div>
+                </div>
+
+                <div onclick="openLightbox(this)"
+                    class="gallery-item azotea relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
+                    <img src="img/azotea/PRIV-PLAYA-HOMBRE.jpg" alt="Playa del Hombre"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <span class="text-[9px] font-black text-blue-400 uppercase tracking-[0.2em] mb-2 block">Playa
+                            del Hombre</span>
+                        <h4 class="text-xl font-black text-white leading-tight">Rehabilitación de Cubierta</h4>
+                    </div>
+                </div>
+
+                <div onclick="openLightbox(this)"
+                    class="gallery-item azotea relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
+                    <img src="img/azotea/techo-las-palmas-1.jpeg" alt="Techo Las Palmas"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <span class="text-[9px] font-black text-blue-400 uppercase tracking-[0.2em] mb-2 block">Las
+                            Palmas</span>
+                        <h4 class="text-xl font-black text-white leading-tight">Sistema de Estanqueidad</h4>
+                    </div>
+                </div>
+
+                <div onclick="openLightbox(this)"
+                    class="gallery-item azotea relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
+                    <img src="img/azotea/techo-las-palmas.jpeg" alt="Techo Las Palmas"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <span class="text-[9px] font-black text-blue-400 uppercase tracking-[0.2em] mb-2 block">Las
+                            Palmas</span>
+                        <h4 class="text-xl font-black text-white leading-tight">Tratamiento con Resina</h4>
+                    </div>
+                </div>
+
+                <div onclick="openLightbox(this)"
+                    class="gallery-item azotea relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
+                    <img src="img/azotea/PUERTO-SOL.jpg" alt="Puerto Sol"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <span class="text-[9px] font-black text-blue-400 uppercase tracking-[0.2em] mb-2 block">Complejo
+                            Puerto Sol</span>
+                        <h4 class="text-xl font-black text-white leading-tight">Revestimiento Técnico</h4>
+                    </div>
+                </div>
+
+                <div onclick="openLightbox(this)"
+                    class="gallery-item azotea relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
+                    <img src="img/azotea/techo-casa.jpg" alt="Techo Casa"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <span
+                            class="text-[9px] font-black text-blue-400 uppercase tracking-[0.2em] mb-2 block">Residencial</span>
+                        <h4 class="text-xl font-black text-white leading-tight">Protección de Cubiertas</h4>
+                    </div>
+                </div>
+
+                <!-- Aljibes -->
+                <div onclick="openLightbox(this)"
+                    class="gallery-item aljibe relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
+                    <img src="img/aljibe/Aljibe-MASPALOMAS.jpg" alt="Aljibe"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <span class="text-[9px] font-black text-blue-400 uppercase tracking-[0.2em] mb-2 block">Uso
+                            Alimentario</span>
+                        <h4 class="text-xl font-black text-white leading-tight">Saneamiento de Aljibe</h4>
+                    </div>
+                </div>
+
+                <div onclick="openLightbox(this)"
+                    class="gallery-item aljibe relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
+                    <img src="img/aljibe/aljibe-maspalomas-2.jpg" alt="Aljibe"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <span class="text-[9px] font-black text-blue-400 uppercase tracking-[0.2em] mb-2 block">Uso
+                            Alimentario</span>
+                        <h4 class="text-xl font-black text-white leading-tight">Saneamiento de Aljibe</h4>
+                    </div>
+                </div>
+
+                <div id="load-more-container"
+                    class="hidden md:hidden absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900 via-slate-900/95 to-transparent flex items-end justify-center position-absolute absolute bottom-[-70px]">
+                    <button onclick="toggleMobileItems()" id="btn-load-more"
+                        class="bg-slate-900/90 backdrop-blur-sm border border-white/10 text-white px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-xl transition-all active:scale-95 flex flex-col items-center gap-1.5 pointer-events-auto">
+                        <span id="btn-text">Ver más</span>
+                        <i id="btn-icon"
+                            class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300"></i>
+                    </button>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <section id="contacto" class="py-24 bg-slate-50">
+    <div id="lightbox"
+        class="fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-300 p-4 md:p-10"
+        onclick="closeLightbox()">
+
+        <button
+            class="absolute top-4 right-4 md:top-6 md:right-6 text-white/60 hover:text-white text-4xl md:text-5xl font-light transition-colors z-50"
+            onclick="closeLightbox()">&times;</button>
+
+        <div class="flex flex-col items-center justify-center max-w-full max-h-full" onclick="event.stopPropagation()">
+
+            <img id="lightbox-img" src="" alt="Imagen ampliada"
+                class="max-w-[90vw] max-h-[72vh] md:max-h-[78vh] w-auto h-auto object-contain rounded-lg shadow-2xl border border-white/10 block">
+
+            <div id="lightbox-caption"
+                class="text-center mt-5 text-slate-300 font-semibold text-xs md:text-sm tracking-wide bg-slate-900/60 px-5 py-2 rounded-full backdrop-blur-sm">
+            </div>
+        </div>
+    </div>
+    <div id="lightbox"
+        class="fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300"
+        onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-white/70 hover:text-white text-5xl font-light transition-colors"
+            onclick="closeLightbox()">&times;</button>
+        <div class="max-w-[90vw] max-h-[85vh] relative" onclick="event.stopPropagation()">
+            <img id="lightbox-img" src="" alt="Imagen ampliada"
+                class="w-full h-full object-contain rounded-lg shadow-2xl border border-white/10">
+            <div id="lightbox-caption" class="text-center mt-4 text-slate-300 font-medium text-sm tracking-wide"></div>
+        </div>
+    </div>
+
+    <!-- # endregion -->
+
+    <!-- # ========================================== -->
+    <!-- # region CONTACTO -->
+    <!-- # ========================================== -->
+    <section id="contacto" class="py-32 bg-slate-50 bg-dots">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:row-reverse lg:flex-row">
-                <!-- Info de contacto -->
-                <div class="lg:w-2/5 bg-[#0081C9] p-12 text-white">
-                    <h2 class="text-3xl font-bold mb-8 text-white">Hablemos de su proyecto</h2>
-                    <p class="text-blue-100 mb-12">Estamos listos para ofrecerle la mejor solución técnica en impermeabilización.</p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <div class="mt-1"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="bg-white rounded-[3rem] shadow-2xl overflow-hidden grid lg:grid-cols-2 border border-slate-100">
+                <div class="p-16 lg:p-24 bg-slate-900 text-white relative">
+                    <div class="absolute top-0 right-0 p-10 opacity-10">
+                        <i class="fa-solid fa-paper-plane text-[10rem]"></i>
+                    </div>
+                    <h2 class="text-xs uppercase tracking-[0.5em] text-blue-400 font-black mb-8">Hablemos</h2>
+                    <p class="text-5xl font-black mb-12 tracking-tighter leading-tight">¿Tienes un proyecto en mente?
+                    </p>
+
+                    <div class="space-y-8 relative z-10">
+                        <div class="flex items-center gap-6 group">
+                            <div
+                                class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
                             <div>
-                                <p class="font-bold">Dirección</p>
-                                <p class="text-blue-100 text-sm">C/ La Mareta 13, 35200 San Gregorio Telde, Gran Canaria</p>
+                                <p class="text-[10px] font-black uppercase tracking-widest text-slate-500">Ubicación</p>
+                                <p class="text-lg font-bold">Telde, Gran Canaria</p>
                             </div>
                         </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="mt-1"><i class="fa-solid fa-phone"></i></div>
-                            <div>
-                                <p class="font-bold">Teléfono</p>
-                                <p class="text-blue-100 text-sm">+34 650 841 541</p>
+                        <div class="flex items-center gap-6 group">
+                            <div
+                                class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform text-white">
+                                <i class="fa-solid fa-phone"></i>
                             </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="mt-1"><i class="fa-solid fa-envelope"></i></div>
                             <div>
-                                <p class="font-bold">Email</p>
-                                <p class="text-blue-100 text-sm">imperviera@gmail.com</p>
+                                <p class="text-[10px] font-black uppercase tracking-widest text-slate-500">Teléfono
+                                    Directo</p>
+                                <p class="text-lg font-bold">+34 650 841 541</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Formulario -->
-                <div class="lg:w-3/5 p-12">
+                <div class="p-16 lg:p-24">
                     <form id="contactForm" class="space-y-6">
                         <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-xs uppercase font-bold text-slate-400 mb-2">Nombre Completo</label>
-                                <input type="text" placeholder="Ej: Juan Pérez" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-0 outline-none transition-all">
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Tu
+                                    nombre</label>
+                                <input type="text" placeholder="Ej. Juan Pérez"
+                                    class="w-full bg-slate-50 border-0 p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#0081C9] transition-all">
                             </div>
-                            <div>
-                                <label class="block text-xs uppercase font-bold text-slate-400 mb-2">Correo Electrónico</label>
-                                <input type="email" placeholder="email@ejemplo.com" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-0 outline-none transition-all">
+                            <div class="space-y-2">
+                                <label
+                                    class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Email</label>
+                                <input type="email" placeholder="hola@ejemplo.com"
+                                    class="w-full bg-slate-50 border-0 p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#0081C9] transition-all">
                             </div>
                         </div>
-                        <div>
-                            <label class="block text-xs uppercase font-bold text-slate-400 mb-2">Servicio de interés</label>
-                            <select class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none appearance-none bg-white">
-                                <option>Impermeabilización de Piscinas</option>
-                                <option>Tratamiento de Techos</option>
-                                <option>Reparación de Aljibes</option>
-                                <option>Otro</option>
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">¿Qué
+                                necesitas?</label>
+                            <select
+                                class="w-full bg-slate-50 border-0 p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#0081C9] transition-all text-slate-500">
+                                <option>Impermeabilizar Piscina</option>
+                                <option>Reparar Azotea/Techo</option>
+                                <option>Limpieza Aljibe</option>
+                                <option>Otros</option>
                             </select>
                         </div>
-                        <div>
-                            <label class="block text-xs uppercase font-bold text-slate-400 mb-2">Mensaje</label>
-                            <textarea rows="4" placeholder="Cuéntenos sobre su problema de filtración..." class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none transition-all"></textarea>
+                        <div class="space-y-2">
+                            <label
+                                class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Mensaje</label>
+                            <textarea rows="4" placeholder="Cuéntanos los detalles de la superficie..."
+                                class="w-full bg-slate-50 border-0 p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#0081C9] transition-all"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-[#0081C9] text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">
-                            SOLICITAR PRESUPUESTO GRATUITO
+                        <button type="submit"
+                            class="w-full bg-[#0081C9] text-white font-black py-5 rounded-xl hover:bg-blue-700 transition-all shadow-xl shadow-blue-100 uppercase tracking-widest text-xs">
+                            ENVIAR SOLICITUD DE VISITA
                         </button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+    <!-- # endregion -->
 
-    <footer class="bg-white py-12 border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-            <div class="text-xl font-bold tracking-tighter text-[#0081C9] mb-4 md:mb-0">
-                MI <span class="text-slate-400 font-normal">Imperviera</span>
+    <!-- # ========================================== -->
+    <!-- # region FOOTER -->
+    <!-- # ========================================== -->
+    <footer class="bg-slate-900 text-white py-20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-2 mb-8">
+                        <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center font-bold">I</div>
+                        <span class="font-black text-xl tracking-tighter">IMPERVIERA</span>
+                    </div>
+                    <p class="text-slate-400 text-sm max-w-sm leading-relaxed">
+                        Expertos en la aplicación técnica de resinas sintéticas para el sector de la construcción y
+                        mantenimiento en Gran Canaria.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-[10px] font-black uppercase tracking-widest text-blue-400 mb-6">Enlaces</h5>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Servicios</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Galería de Trabajos</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Sobre nosotros</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-[10px] font-black uppercase tracking-widest text-blue-400 mb-6">Social</h5>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-blue-600 transition-all"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-blue-600 transition-all"><i
+                                class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
             </div>
-            <div class="text-slate-400 text-sm">
-                &copy; 2026 Imperviera. Todos los derechos reservados.
-            </div>
-            <div class="flex space-x-6 mt-4 md:mt-0">
-                <a href="#" class="text-slate-400 hover:text-blue-600 transition-colors text-xl"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="text-slate-400 hover:text-blue-600 transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="text-slate-400 hover:text-blue-600 transition-colors text-xl"><i class="fa-brands fa-whatsapp"></i></a>
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="text-[10px] uppercase tracking-[0.4em] text-slate-500 font-bold">
+                    &copy; 2026 Imperviera. Made with Precision.
+                </div>
+                <div class="flex gap-8 text-[10px] uppercase tracking-widest text-slate-500 font-black">
+                    <a href="#" class="hover:text-white">Aviso Legal</a>
+                    <a href="#" class="hover:text-white">Privacidad</a>
+                </div>
             </div>
         </div>
     </footer>
+    <!-- # endregion -->
+
+    <!-- # ========================================== -->
+    <!-- # region ASISTENTE IA (GEMINI) -->
+    <!-- # ========================================== -->
+    <!-- Botón Flotante -->
+    <button id="ai-toggle"
+        class="fixed bottom-8 right-8 bg-[#0081C9] text-white w-16 h-16 rounded-2xl shadow-2xl z-[100] flex items-center justify-center hover:scale-110 transition-transform active:scale-95 group">
+        <i class="fa-solid fa-robot text-2xl group-hover:rotate-12 transition-transform"></i>
+        <span class="absolute -top-2 -left-2 flex h-5 w-5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-5 w-5 bg-green-500 border-2 border-white"></span>
+        </span>
+    </button>
+
+    <!-- Ventana de Chat -->
+    <div id="ai-chat-window"
+        class="fixed bottom-28 right-8 w-[350px] bg-white rounded-3xl shadow-2xl z-[100] border border-slate-100 hidden flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-300">
+        <div class="bg-slate-900 text-white p-6 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <div>
+                    <span class="block text-xs font-black uppercase tracking-widest">Asistente Técnico</span>
+                    <span class="text-[10px] text-green-400 font-bold">Online ahora</span>
+                </div>
+            </div>
+            <button id="ai-close" class="text-slate-400 hover:text-white transition-colors"><i
+                    class="fa-solid fa-xmark text-xl"></i></button>
+        </div>
+
+        <div id="ai-messages" class="h-[400px] overflow-y-auto p-6 space-y-4 text-sm bg-slate-50 scroll-smooth">
+            <div
+                class="bg-white p-4 rounded-2xl rounded-tl-none text-slate-700 shadow-sm border border-slate-100 max-w-[85%]">
+                <p class="font-bold mb-1 text-blue-600">Imperviera Bot</p>
+                ¡Hola! Soy el experto en impermeabilización. ¿Buscas presupuesto para una piscina o tienes alguna
+                filtración?
+            </div>
+        </div>
+
+        <div class="p-6 bg-white border-t border-slate-100">
+            <div class="flex gap-2 bg-slate-100 p-2 rounded-2xl">
+                <input type="text" id="ai-input" placeholder="Escribe tu duda técnica..."
+                    class="flex-1 text-sm outline-none bg-transparent px-3 py-2 font-medium">
+                <button id="ai-send"
+                    class="bg-[#0081C9] text-white w-10 h-10 rounded-xl hover:bg-blue-700 transition-all flex items-center justify-center shadow-lg shadow-blue-100">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const messageBox = document.createElement('div');
-            messageBox.className = 'fixed bottom-10 right-10 bg-green-600 text-white px-6 py-4 rounded-xl shadow-2xl z-50 animate-bounce';
-            messageBox.innerText = '¡Mensaje enviado con éxito! Nos contactaremos pronto.';
-            document.body.appendChild(messageBox);
-            setTimeout(() => messageBox.remove(), 4000);
-            this.reset();
+        const aiToggle = document.getElementById('ai-toggle');
+        const aiChat = document.getElementById('ai-chat-window');
+        const aiClose = document.getElementById('ai-close');
+        const aiMessages = document.getElementById('ai-messages');
+        const aiInput = document.getElementById('ai-input');
+        const aiSend = document.getElementById('ai-send');
+
+        aiToggle.onclick = () => aiChat.classList.toggle('hidden');
+        aiClose.onclick = () => aiChat.classList.add('hidden');
+
+        async function callGemini(prompt) {
+            const systemPrompt = `
+                Eres el Asistente Técnico Oficial de IMPERVIERA, expertos en impermeabilización en Gran Canaria desde hace más de 25 años.
+                
+                CONOCIMIENTO ESPECÍFICO DE LA EMPRESA:
+                1. SERVICIOS: 
+                    - PISCINAS: Especialistas en aplicación de resinas, gelcoat y topcoat de poliéster isoftálicas. Reparamos fugas y grietas.
+                    - TECHOS: Cubiertas, azoteas, terrazas y naves industriales. Usamos fibra de vidrio mat emulsión con pinturas transitables.
+                    - ALJIBES: Depósitos de agua potable. Usamos morteros cementosos certificados (Weber, Sika, Kerakoll).
+                2. MATERIALES: Solo usamos marcas de primera calidad (Weber-Sika-Kerakoll).
+                3. UBICACIÓN: Estamos en San Gregorio, Telde (Gran Canaria). Operamos en toda la isla.
+                4. CONTACTO: Teléfono +34 650 841 541. Email: imperviera@gmail.com.
+                5. GARANTÍA: Ofrecemos garantía de estanqueidad total en todos nuestros trabajos.
+                
+                REGLAS DE COMPORTAMIENTO:
+                - Sé profesional, servicial y directo.
+                - Si el cliente describe una humedad grave, insiste en que pida una visita técnica GRATUITA.
+                - No inventes precios. Di que el presupuesto depende de los metros cuadrados y el estado de la superficie.
+                - Si te preguntan algo fuera de la construcción o impermeabilización, reconduce la charla amablemente: "Como experto en impermeabilización, solo puedo ayudarte con temas de filtraciones y humedades".
+                - Responde siempre en español.
+            `;
+
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }],
+                systemInstruction: { parts: [{ text: systemPrompt }] }
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+                return result.candidates[0].content.parts[0].text;
+            } catch (error) {
+                return "Lo siento, tengo problemas de conexión. Por favor, llámanos directamente al +34 650 841 541.";
+            }
+        }
+
+        async function handleSend() {
+            const text = aiInput.value.trim();
+            if (!text) return;
+
+            appendMessage(text, 'user');
+            aiInput.value = '';
+
+            const loadingId = 'loading-' + Date.now();
+            appendMessage("Analizando...", 'bot', loadingId);
+
+            const response = await callGemini(text);
+            const loadingEl = document.getElementById(loadingId);
+            if (loadingEl) loadingEl.innerHTML = `<p class="font-bold mb-1 text-blue-600">Imperviera Bot</p>${response}`;
+        }
+
+        function appendMessage(text, side, id = null) {
+            const div = document.createElement('div');
+            if (id) div.id = id;
+
+            if (side === 'user') {
+                div.className = 'bg-blue-600 text-white p-4 rounded-2xl rounded-tr-none self-end ml-auto max-w-[85%] shadow-lg shadow-blue-100 font-medium';
+                div.innerText = text;
+            } else {
+                div.className = 'bg-white p-4 rounded-2xl rounded-tl-none text-slate-700 shadow-sm border border-slate-100 max-w-[85%]';
+                div.innerText = text;
+            }
+
+            aiMessages.appendChild(div);
+            aiMessages.scrollTop = aiMessages.scrollHeight;
+        }
+
+        aiSend.onclick = handleSend;
+        aiInput.onkeypress = (e) => { if (e.key === 'Enter') handleSend(); };
+    </script>
+    <!-- # endregion -->
+
+    <!-- # ========================================== -->
+    <!-- # region SCRIPTS -->
+    <!-- # ========================================== -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+
+            if (menu.classList.contains('max-h-0')) {
+                menu.classList.remove('max-h-0');
+                menu.classList.add('max-h-[400px]');
+
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                menu.classList.remove('max-h-[400px]');
+                menu.classList.add('max-h-0');
+
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        // Variable global para controlar si el usuario expandió manualmente la sección en móvil
+        let mobileExpanded = false;
+
+        function filterGallery(category, isExpandingCall = false) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // 1. Gestionar estados visuales de los botones de filtrado
+            buttons.forEach(btn => {
+                if (btn.getAttribute('onclick').includes(category)) {
+                    btn.classList.add('active', 'bg-blue-600', 'text-white');
+                    btn.classList.remove('bg-white/5', 'text-slate-300');
+                } else {
+                    btn.classList.remove('active', 'bg-blue-600', 'text-white');
+                    btn.classList.add('bg-white/5', 'text-slate-300');
+                }
+            });
+
+            // Si el usuario cambia de categoría desde los botones de arriba, forzamos el repliegue inicial
+            if (!isExpandingCall) {
+                mobileExpanded = false;
+                // Reiniciamos los textos del botón por si acaso estaba en modo "Ver menos"
+                const btnText = document.getElementById('btn-text');
+                const btnIcon = document.getElementById('btn-icon');
+                if (btnText && btnIcon) {
+                    btnText.innerText = "Ver más proyectos";
+                    btnIcon.className = "fa-solid fa-chevron-down text-xs";
+                }
+            }
+
+            // Contamos cuántos elementos coinciden con el filtro actual
+            let visibleCount = 0;
+            const isMobile = window.innerWidth < 768;
+
+            items.forEach(item => {
+                const matchCondition = category === 'todos' || item.classList.contains(category);
+
+                if (matchCondition) {
+                    visibleCount++;
+
+                    // Si es móvil, no está expandido y supera los 3, lo ocultamos
+                    if (isMobile && visibleCount > 3 && !mobileExpanded) {
+                        item.style.display = 'none';
+                    } else {
+                        item.style.display = 'block';
+                    }
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // 2. Controlar la visualización del contenedor y del degradado
+            const loadMoreContainer = document.getElementById('load-more-container');
+            if (loadMoreContainer) {
+                // El contenedor del botón se muestra en móvil SIEMPRE que la categoría tenga más de 3 fotos
+                if (isMobile && visibleCount > 3) {
+                    loadMoreContainer.classList.remove('hidden');
+
+                    if (mobileExpanded) {
+                        // Si está expandido ("Ver menos"), quitamos el degradado fuerte de fondo para que no tape las fotos abiertas
+                        loadMoreContainer.classList.remove('bg-gradient-to-t', 'from-slate-900', 'via-slate-900/95');
+                        loadMoreContainer.classList.add('absolute', 'bottom-[-70px]'); // Lo empujamos un poco abajo de la última foto
+                        document.getElementById('proyectos').classList.add('pb-20');
+                    } else {
+                        // Si está colapsado ("Ver más"), reactivamos el degradado que difumina las imágenes ocultas
+                        loadMoreContainer.classList.add('bg-gradient-to-t', 'from-slate-900', 'via-slate-900/95');
+                        loadMoreContainer.classList.remove('absolute', 'bottom-[-70px]');
+                        // document.getElementById('proyectos').classList.add('pb-40');
+                    }
+                } else {
+                    loadMoreContainer.classList.add('hidden');
+                    // document.getElementById('proyectos').classList.remove('pb-40', 'pb-48');
+                }
+            }
+        }
+
+        function toggleMobileItems() {
+            const btnText = document.getElementById('btn-text');
+            const btnIcon = document.getElementById('btn-icon');
+
+            mobileExpanded = !mobileExpanded;
+
+            if (mobileExpanded) {
+                if (btnText) btnText.innerText = "Ver menos";
+                // En vez de cambiar el icono, rotamos el existente 180 grados (apuntará hacia arriba)
+                if (btnIcon) btnIcon.classList.add('rotate-180');
+            } else {
+                if (btnText) btnText.innerText = "Ver más";
+                // Quitamos la rotación (volverá a apuntar hacia abajo)
+                if (btnIcon) btnIcon.classList.remove('rotate-180');
+
+                // Retornar suavemente al inicio del portfolio
+                document.getElementById('proyectos').scrollIntoView({ behavior: 'smooth' });
+            }
+
+            const activeBtn = document.querySelector('.filter-btn.active');
+            const currentCategory = activeBtn ? activeBtn.getAttribute('onclick').match(/'([^']+)'/)[1] : 'todos';
+
+            filterGallery(currentCategory, true);
+        }
+
+        // Aseguramos que se calcule correctamente al cargar la página por primera vez
+        document.addEventListener("DOMContentLoaded", () => {
+            filterGallery('todos');
+        });
+
+        // Si el usuario rota la pantalla o cambia el tamaño del navegador, recalculamos
+        window.addEventListener('resize', () => {
+            const activeBtn = document.querySelector('.filter-btn.active');
+            const currentCategory = activeBtn ? activeBtn.getAttribute('onclick').match(/'([^']+)'/)[1] : 'todos';
+            filterGallery(currentCategory);
+        });
+
+
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const notification = document.createElement('div');
+                notification.className = 'fixed top-24 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-10 py-5 rounded-2xl shadow-2xl z-[200] font-black tracking-widest text-xs flex items-center gap-4 animate-bounce';
+                notification.innerHTML = '<i class="fa-solid fa-circle-check text-green-400 text-xl"></i> ¡SOLICITUD RECIBIDA CON ÉXITO!';
+                document.body.appendChild(notification);
+                setTimeout(() => notification.remove(), 4000);
+                this.reset();
+            });
+        }
+
+
+        function openLightbox(element) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+
+            const imgSrc = element.querySelector('img').src;
+            const titleText = element.querySelector('h4').innerText;
+
+            lightboxImg.src = imgSrc;
+            lightboxCaption.innerText = titleText;
+
+            lightbox.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+
+            lightbox.classList.add('opacity-0', 'pointer-events-none');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
         });
     </script>
+    <!-- # endregion -->
+
 </body>
+
 </html>

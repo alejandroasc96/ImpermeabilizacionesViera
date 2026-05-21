@@ -156,6 +156,9 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.vscode/
+version/
+optimizar.py
 
 # Spyder project settings
 .spyderproject

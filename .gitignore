@@ -160,6 +160,7 @@ venv.bak/
 version/
 optimizar.py
 tailwind.exe
+im/
 
 # Spyder project settings
 .spyderproject

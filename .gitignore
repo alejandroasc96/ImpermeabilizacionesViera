@@ -159,6 +159,7 @@ venv.bak/
 .vscode/
 version/
 optimizar.py
+tailwind.exe
 
 # Spyder project settings
 .spyderproject

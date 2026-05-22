@@ -55,13 +55,15 @@
                     visibleCount++;
 
                     if (isMobile && visibleCount > 3 && !mobileExpanded) {
-                        item.style.display = 'none';
+                        item.classList.add('hidden');
                     } else {
-                        item.style.display = 'block';
+                        item.classList.remove('hidden');
                     }
                 } else {
-                    item.style.display = 'none';
+                    item.classList.add('hidden');
                 }
+                
+                item.style.display = ''; 
             });
 
             const loadMoreContainer = document.getElementById('load-more-container');

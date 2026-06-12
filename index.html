@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Expertos en impermeabilización y resina de poliéster en Gran Canaria. Reparación definitiva de fugas en piscinas, azoteas y aljibes.">
     <title>Imperviera | Especialistas en Resina de Poliéster</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 
+    <link rel="stylesheet" href="css/fuentes.css">
+    <link rel="stylesheet" href="css/tailwind-final.css">
+
+    <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script> -->
+    <link rel="stylesheet" href="css/all.min.css">
 </head>
 
 <body class="bg-white text-slate-900 antialiased">
@@ -81,7 +81,7 @@
     <!-- # region HERO SECTION -->
     <!-- # ========================================== -->
     <header id="inicio"
-        class="relative min-h-screen flex items-center bg-gradient-to-tr from-sky-100/70 via-blue-50 to-sky-50/40 overflow-hidden pt-32 pb-16 lg:py-24">
+        class="relative min-h-screen portrait:min-h-0 flex items-center bg-gradient-to-tr from-sky-100/70 via-blue-50 to-sky-50/40 overflow-hidden pt-32 pb-16 lg:py-24 lg:landscape:min-h-screen lg:portrait:pt-44 lg:portrait:pb-32">
 
         <div class="absolute top-0 right-0 w-1/3 h-full bg-white/40 skew-x-12 transform translate-x-20 hidden lg:block">
         </div>
@@ -89,7 +89,8 @@
         <div
             class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center relative z-10">
 
-            <div class="w-full flex flex-col justify-center">
+            <div
+                class="w-full flex flex-col justify-center max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-none mx-auto lg:mx-0">
 
                 <div class="block lg:hidden mb-2">
                     <div
@@ -109,10 +110,9 @@
                 </div>
 
                 <div class="w-full relative px-2 sm:px-6 lg:px-0 mt-2 mb-6 lg:mb-0 lg:hidden">
-                    <div
-                        class="relative rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto aspect-[4/3] sm:aspect-[16/10]">
-                        <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&q=80&w=1000"
-                            class="object-cover h-full w-full" alt="Piscina impermeabilizada">
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl w-full aspect-[4/3] sm:aspect-[16/10]">
+                        <img src="/img/piscina-hero.webp" class="object-cover h-full w-full" alt="Piscina impermeabilizada"
+                            fetchpriority="high">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent"></div>
                     </div>
                     <div
@@ -149,10 +149,12 @@
                     </h1>
                 </div>
 
-                <p class="text-base md:text-xl text-slate-600 mb-6 lg:mb-8 leading-relaxed max-w-lg">
-                    No solo tapamos grietas. Aplicamos <span
-                        class="font-bold text-slate-900 border-b-2 border-blue-200">tecnología de resinas
-                        isoftálicas</span> para una estanqueidad perpetua en piscinas y cubiertas.
+                <p class="mt-6 text-lg md:text-xl text-slate-600 max-w-2xl font-normal leading-relaxed">
+                    No solo tapamos grietas. Aplicamos
+                    <span class="font-bold text-slate-900">tecnologías con resinas de poliéster</span>
+                    y
+                    <span class="font-bold text-slate-900">pinturas impermeables</span>
+                    para cubiertas.
                 </p>
 
                 <div class="grid grid-cols-2 gap-4 mb-6 lg:mb-8">
@@ -175,7 +177,7 @@
                         </div>
                         <span
                             class="text-[11px] sm:text-xs font-bold text-slate-700 uppercase tracking-tight group-hover:text-[#0081C9] transition-colors duration-300">
-                            Presupuesto 24h
+                            Presupuesto sin coste
                         </span>
                     </div>
 
@@ -199,7 +201,7 @@
                     class="relative rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto lg:max-w-none aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/5] xl:aspect-[3/4]">
                     <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&q=80&w=1000"
                         class="object-cover h-full w-full hover:scale-105 transition-transform duration-1000"
-                        alt="Piscina impermeabilizada">
+                        alt="Piscina impermeabilizada" fetchpriority="high">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent"></div>
                 </div>
 
@@ -255,7 +257,7 @@
                     </div>
                     <div
                         class="logo-item grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                        <img src="img/logos/hotel-europa.webp" alt="Hotel Europa">
+                        <img src="img/logos/hotel-europa.webp" alt="Hotel Europa" class="h-10 w-auto object-contain">
                     </div>
                     <div
                         class="logo-item grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
@@ -302,7 +304,7 @@
                     </div>
                     <div
                         class="logo-item grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                        <img src="img/logos/hotel-europa.webp" alt="Hotel Europa">
+                        <img src="img/logos/hotel-europa.webp" alt="Hotel Europa" class="h-10 w-auto object-contain">
                     </div>
                     <div
                         class="logo-item grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
@@ -351,13 +353,13 @@
                             <span class="relative z-10 text-white">control</span>
                             <span
                                 class="absolute inset-0 bg-[#0081C9] rounded-lg -rotate-1 transform scale-y-110 scale-x-105 shadow-lg shadow-blue-100"></span>
-                        </span>.
+                        </span>
                     </p>
                 </div>
-                <p class="text-slate-500 text-sm max-w-xs border-l-2 border-blue-600 pl-6 mb-2">
+                <!-- <p class="text-slate-500 text-sm max-w-xs border-l-2 border-blue-600 pl-6 mb-2">
                     Utilizamos resinas termoestables de alta resistencia química y mecánica, ideales para el clima de
                     Canarias.
-                </p>
+                </p> -->
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
@@ -369,8 +371,7 @@
                     </div>
                     <h3 class="text-2xl font-black mb-4 group-hover:text-white transition-colors">Piscinas</h3>
                     <p class="text-slate-500 text-sm leading-relaxed group-hover:text-blue-50 transition-colors mb-4">
-                        Revestimientos con <strong>Resina de Poliéster</strong> reforzada con fibra de vidrio. Acabados
-                        en Gelcoat de cualquier color para un brillo eterno.
+                        Revestimientos de <strong>Fibra de Vidrio</strong> y acabados con <strong>pinturas de poliéster TopCoat</strong>.
                     </p>
                     <ul class="mt-auto text-sm space-y-2 text-slate-500 group-hover:text-blue-50 transition-colors">
                         <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Resinas de primera calidad</li>
@@ -385,15 +386,13 @@
                         class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-house-chimney-window text-2xl text-[#0081C9]"></i>
                     </div>
-                    <h3 class="text-2xl font-black mb-4 group-hover:text-white transition-colors">Techos y Terrazas</h3>
+                    <h3 class="text-2xl font-black mb-4 group-hover:text-white transition-colors">Cubiertas y Terrazas</h3>
                     <p class="text-slate-500 text-sm leading-relaxed group-hover:text-blue-50 transition-colors mb-4">
-                        Sistemas transitables para azoteas. Olvídese de las telas asfálticas que se cuartean con el sol;
-                        nuestra resina es una sola pieza.
+                        Sistemas avanzados para <strong>azoteas, cubiertas y terrazas</strong>.
                     </p>
                     <ul class="mt-auto text-sm space-y-2 text-slate-500 group-hover:text-blue-50 transition-colors">
                         <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Naves industriales</li>
                         <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Azoteas transitables</li>
-                        <li><i class="fa-solid fa-check mr-2 text-green-500"></i> Canalización de aguas</li>
                     </ul>
                 </div>
 
@@ -447,7 +446,7 @@
                 <div onclick="openLightbox(this)"
                     class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/piscinas/fotos-pool-1-min.webp" alt="Piscina Nocturna"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        class="w-full h-full object-cover transition-transform duration-1000 width:820 height:615 group-hover:scale-110" loading="lazy">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
@@ -462,7 +461,7 @@
                 <div onclick="openLightbox(this)"
                     class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/piscinas/Piscina_impermeabilizada.webp" alt="Piscina Terminada"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        class="w-full h-full object-cover transition-transform duration-1000 width:820 height:615 group-hover:scale-110" loading="lazy">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
@@ -476,7 +475,7 @@
                 <div onclick="openLightbox(this)"
                     class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/piscinas/APT-AMAZONAS-min.webp" alt="Amazonas Blanco"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        class="w-full h-full object-cover transition-transform duration-1000 width:820 height:615 group-hover:scale-110" loading="lazy">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
@@ -490,7 +489,7 @@
                 <div onclick="openLightbox(this)"
                     class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/piscinas/APT-AMAZONAS-2-min.webp" alt="Amazonas Llenado"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        class="w-full h-full object-cover transition-transform duration-1000 width:820 height:615 group-hover:scale-110" loading="lazy">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
@@ -504,7 +503,7 @@
                 <div onclick="openLightbox(this)"
                     class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/piscinas/APT-ORINOCO-min.webp" alt="Orinoco"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        class="w-full h-full object-cover transition-transform duration-1000 width:820 height:615 group-hover:scale-110" loading="lazy">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
@@ -518,7 +517,7 @@
                 <div onclick="openLightbox(this)"
                     class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/piscinas/APT.ATAITANA-min.webp" alt="Ataitana"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        class="w-full h-full object-cover transition-transform duration-1000 width:820 height:615 group-hover:scale-110" loading="lazy">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
@@ -532,7 +531,7 @@
                 <div onclick="openLightbox(this)"
                     class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/piscinas/TALASO-GP-1-min.webp" alt="Talasoterapia"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        class="w-full h-full object-cover transition-transform duration-1000 width:820 height:615 group-hover:scale-110" loading="lazy">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
@@ -546,7 +545,7 @@
                 <div onclick="openLightbox(this)"
                     class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/piscinas/TALASO-GP-2-min.webp" alt="Talasoterapia Detalle"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        class="w-full h-full object-cover transition-transform duration-1000 width:820 height:615 group-hover:scale-110" loading="lazy">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
@@ -560,7 +559,7 @@
                 <div onclick="openLightbox(this)"
                     class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/piscinas/TALASO-GP-3-min.webp" alt="Talasoterapia Panorámica"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        class="w-full h-full object-cover transition-transform duration-1000 width:820 height:615 group-hover:scale-110" loading="lazy">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
@@ -575,7 +574,7 @@
                 <div onclick="openLightbox(this)"
                     class="gallery-item azotea relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/azotea/PRIV.webp" alt="Proyecto Privado"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
@@ -590,7 +589,7 @@
                 <div onclick="openLightbox(this)"
                     class="gallery-item azotea relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/azotea/PRIV-PLAYA-HOMBRE.webp" alt="Playa del Hombre"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
@@ -604,7 +603,7 @@
                 <div onclick="openLightbox(this)"
                     class="gallery-item azotea relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/azotea/techo-las-palmas-1.webp" alt="Techo Las Palmas"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
@@ -618,7 +617,7 @@
                 <div onclick="openLightbox(this)"
                     class="gallery-item azotea relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/azotea/techo-las-palmas.webp" alt="Techo Las Palmas"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
@@ -632,7 +631,7 @@
                 <div onclick="openLightbox(this)"
                     class="gallery-item azotea relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/azotea/PUERTO-SOL.webp" alt="Puerto Sol"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
@@ -646,7 +645,7 @@
                 <div onclick="openLightbox(this)"
                     class="gallery-item azotea relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/azotea/techo-casa.webp" alt="Techo Casa"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
@@ -661,7 +660,7 @@
                 <div onclick="openLightbox(this)"
                     class="gallery-item aljibe relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/aljibe/Aljibe-MASPALOMAS.webp" alt="Aljibe"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
@@ -675,7 +674,7 @@
                 <div onclick="openLightbox(this)"
                     class="gallery-item aljibe relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/aljibe/aljibe-maspalomas-2.webp" alt="Aljibe"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
@@ -790,8 +789,7 @@
                         <div class="space-y-2">
                             <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">¿Qué
                                 necesitas?</label>
-                            <select
-                                class="w-full bg-slate-50 border-0 p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#0081C9] transition-all text-slate-500">
+                            <select aria-label="Tipo de servicio necesario" class="w-full bg-slate-50 border-0 p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#0081C9] transition-all text-slate-500">
                                 <option>Impermeabilizar Piscina</option>
                                 <option>Reparar Azotea/Techo</option>
                                 <option>Limpieza Aljibe</option>
@@ -915,8 +913,8 @@
         </div>
     </div>
 
-    <script src="js/gemini.js"></script>
-    <script src="js/main.js"></script>
+    <script defer src="js/gemini.js"></script>
+    <script defer src="js/main.js"></script>
 </body>
 
 </html>

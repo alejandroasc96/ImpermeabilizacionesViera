@@ -159,6 +159,10 @@ venv.bak/
 .vscode/
 version/
 optimizar.py
+tailwind.exe
+im/
+fontawesome-free-6.4.0-web/
+fontawesome-free-6.4.0-web.zip
 
 # Spyder project settings
 .spyderproject

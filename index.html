@@ -16,10 +16,14 @@
 
 <body class="bg-white text-slate-900 antialiased">
 
+    <a href="#contenido" class="skip-link">
+        Saltar al contenido principal
+    </a>
+
     <!-- # ========================================== -->
     <!-- # region NAVEGACION -->
     <!-- # ========================================== -->
-    <nav class="fixed w-full z-50 glass-nav border-b border-slate-100 bg-white/80 backdrop-blur-md">
+    <nav aria-label="Navegación principal" class="fixed w-full z-50 glass-nav border-b border-slate-100 bg-white/80 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
             <div class="flex items-center">
@@ -51,7 +55,7 @@
                 </a>
 
                 <button onclick="toggleMobileMenu()" id="menu-btn"
-                    class="lg:hidden text-slate-700 p-2 focus:outline-none" aria-label="Abrir menú">
+                    class="lg:hidden text-slate-700 p-2 focus:outline-none" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
                     <i class="fa-solid fa-bars text-xl transition-transform duration-300" id="menu-icon"></i>
                 </button>
             </div>
@@ -76,6 +80,8 @@
         </div>
     </nav>
     <!-- # endregion -->
+
+    <main id="contenido">
 
     <!-- # ========================================== -->
     <!-- # region HERO SECTION -->
@@ -430,20 +436,20 @@
                 <p class="text-5xl font-black mb-12 tracking-tighter text-white">Nuestra huella en las islas</p>
 
                 <div class="flex flex-wrap justify-center gap-2 mb-16">
-                    <button onclick="filterGallery('todos')" data-category="todos"
+                    <button onclick="filterGallery('todos')" data-category="todos" aria-pressed="true"
                         class="filter-btn active bg-blue-600 text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-all">Todos</button>
-                    <button onclick="filterGallery('piscina')" data-category="piscina"
+                    <button onclick="filterGallery('piscina')" data-category="piscina" aria-pressed="false"
                         class="filter-btn bg-white/5 hover:bg-white/10 text-slate-300 px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-all">Piscinas</button>
-                    <button onclick="filterGallery('azotea')" data-category="azotea"
+                    <button onclick="filterGallery('azotea')" data-category="azotea" aria-pressed="false"
                         class="filter-btn bg-white/5 hover:bg-white/10 text-slate-300 px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-all">Techos</button>
-                    <button onclick="filterGallery('aljibe')" data-category="aljibe"
+                    <button onclick="filterGallery('aljibe')" data-category="aljibe" aria-pressed="false"
                         class="filter-btn bg-white/5 hover:bg-white/10 text-slate-300 px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-all">Aljibes</button>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
 
-                <div onclick="openLightbox(this)"
+                <div onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Ampliar imagen" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this)}"
                     class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/piscinas/fotos-pool-1-min.webp" alt="Piscina Nocturna"
                         class="w-full h-full object-cover transition-transform duration-1000 width:820 height:615 group-hover:scale-110" loading="lazy">
@@ -458,7 +464,7 @@
                     </div>
                 </div>
 
-                <div onclick="openLightbox(this)"
+                <div onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Ampliar imagen" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this)}"
                     class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/piscinas/Piscina_impermeabilizada.webp" alt="Piscina Terminada"
                         class="w-full h-full object-cover transition-transform duration-1000 width:820 height:615 group-hover:scale-110" loading="lazy">
@@ -472,7 +478,7 @@
                     </div>
                 </div>
 
-                <div onclick="openLightbox(this)"
+                <div onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Ampliar imagen" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this)}"
                     class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/piscinas/APT-AMAZONAS-min.webp" alt="Amazonas Blanco"
                         class="w-full h-full object-cover transition-transform duration-1000 width:820 height:615 group-hover:scale-110" loading="lazy">
@@ -486,7 +492,7 @@
                     </div>
                 </div>
 
-                <div onclick="openLightbox(this)"
+                <div onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Ampliar imagen" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this)}"
                     class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/piscinas/APT-AMAZONAS-2-min.webp" alt="Amazonas Llenado"
                         class="w-full h-full object-cover transition-transform duration-1000 width:820 height:615 group-hover:scale-110" loading="lazy">
@@ -500,7 +506,7 @@
                     </div>
                 </div>
 
-                <div onclick="openLightbox(this)"
+                <div onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Ampliar imagen" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this)}"
                     class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/piscinas/APT-ORINOCO-min.webp" alt="Orinoco"
                         class="w-full h-full object-cover transition-transform duration-1000 width:820 height:615 group-hover:scale-110" loading="lazy">
@@ -514,7 +520,7 @@
                     </div>
                 </div>
 
-                <div onclick="openLightbox(this)"
+                <div onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Ampliar imagen" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this)}"
                     class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/piscinas/APT.ATAITANA-min.webp" alt="Ataitana"
                         class="w-full h-full object-cover transition-transform duration-1000 width:820 height:615 group-hover:scale-110" loading="lazy">
@@ -528,7 +534,7 @@
                     </div>
                 </div>
 
-                <div onclick="openLightbox(this)"
+                <div onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Ampliar imagen" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this)}"
                     class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/piscinas/TALASO-GP-1-min.webp" alt="Talasoterapia"
                         class="w-full h-full object-cover transition-transform duration-1000 width:820 height:615 group-hover:scale-110" loading="lazy">
@@ -542,7 +548,7 @@
                     </div>
                 </div>
 
-                <div onclick="openLightbox(this)"
+                <div onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Ampliar imagen" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this)}"
                     class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/piscinas/TALASO-GP-2-min.webp" alt="Talasoterapia Detalle"
                         class="w-full h-full object-cover transition-transform duration-1000 width:820 height:615 group-hover:scale-110" loading="lazy">
@@ -556,7 +562,7 @@
                     </div>
                 </div>
 
-                <div onclick="openLightbox(this)"
+                <div onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Ampliar imagen" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this)}"
                     class="gallery-item piscina relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/piscinas/TALASO-GP-3-min.webp" alt="Talasoterapia Panorámica"
                         class="w-full h-full object-cover transition-transform duration-1000 width:820 height:615 group-hover:scale-110" loading="lazy">
@@ -571,7 +577,7 @@
                 </div>
 
                 <!-- Azoteas -->
-                <div onclick="openLightbox(this)"
+                <div onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Ampliar imagen" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this)}"
                     class="gallery-item azotea relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/azotea/PRIV.webp" alt="Proyecto Privado"
                         class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
@@ -586,7 +592,7 @@
                     </div>
                 </div>
 
-                <div onclick="openLightbox(this)"
+                <div onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Ampliar imagen" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this)}"
                     class="gallery-item azotea relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/azotea/PRIV-PLAYA-HOMBRE.webp" alt="Playa del Hombre"
                         class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
@@ -600,7 +606,7 @@
                     </div>
                 </div>
 
-                <div onclick="openLightbox(this)"
+                <div onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Ampliar imagen" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this)}"
                     class="gallery-item azotea relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/azotea/techo-las-palmas-1.webp" alt="Techo Las Palmas"
                         class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
@@ -614,7 +620,7 @@
                     </div>
                 </div>
 
-                <div onclick="openLightbox(this)"
+                <div onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Ampliar imagen" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this)}"
                     class="gallery-item azotea relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/azotea/techo-las-palmas.webp" alt="Techo Las Palmas"
                         class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
@@ -628,7 +634,7 @@
                     </div>
                 </div>
 
-                <div onclick="openLightbox(this)"
+                <div onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Ampliar imagen" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this)}"
                     class="gallery-item azotea relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/azotea/PUERTO-SOL.webp" alt="Puerto Sol"
                         class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
@@ -642,7 +648,7 @@
                     </div>
                 </div>
 
-                <div onclick="openLightbox(this)"
+                <div onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Ampliar imagen" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this)}"
                     class="gallery-item azotea relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/azotea/techo-casa.webp" alt="Techo Casa"
                         class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
@@ -657,7 +663,7 @@
                 </div>
 
                 <!-- Aljibes -->
-                <div onclick="openLightbox(this)"
+                <div onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Ampliar imagen" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this)}"
                     class="gallery-item aljibe relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/aljibe/Aljibe-MASPALOMAS.webp" alt="Aljibe"
                         class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
@@ -671,7 +677,7 @@
                     </div>
                 </div>
 
-                <div onclick="openLightbox(this)"
+                <div onclick="openLightbox(this)" tabindex="0" role="button" aria-label="Ampliar imagen" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this)}"
                     class="gallery-item aljibe relative h-[350px] overflow-hidden group rounded-2xl shadow-xl cursor-zoom-in">
                     <img src="img/aljibe/aljibe-maspalomas-2.webp" alt="Aljibe"
                         class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
@@ -685,13 +691,11 @@
                     </div>
                 </div>
 
-                <div id="load-more-container"
-                    class="hidden md:hidden absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900 via-slate-900/95 to-transparent flex items-end justify-center position-absolute absolute bottom-[-70px]">
-                    <button onclick="toggleMobileItems()" id="btn-load-more"
-                        class="bg-slate-900/90 backdrop-blur-sm border border-white/10 text-white px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-xl transition-all active:scale-95 flex flex-col items-center gap-1.5 pointer-events-auto">
-                        <span id="btn-text">Ver más</span>
-                        <i id="btn-icon"
-                            class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300"></i>
+                <div class="flex justify-center mt-10">
+                    <button onclick="toggleGallery()" id="btn-toggle-gallery"
+                        class="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-[0.2em] transition-all active:scale-95 flex items-center gap-3">
+                        <span id="gallery-btn-text">Ver todas las fotos</span>
+                        <i id="gallery-btn-icon" class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300"></i>
                     </button>
                 </div>
 
@@ -699,11 +703,11 @@
         </div>
     </section>
 
-    <div id="lightbox"
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes"
         class="fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-300 p-4 md:p-10"
         onclick="closeLightbox()">
 
-        <button
+        <button aria-label="Cerrar galería"
             class="absolute top-4 right-4 md:top-6 md:right-6 text-white/60 hover:text-white text-4xl md:text-5xl font-light transition-colors z-50"
             onclick="closeLightbox()">&times;</button>
 
@@ -717,17 +721,7 @@
             </div>
         </div>
     </div>
-    <div id="lightbox"
-        class="fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300"
-        onclick="closeLightbox()">
-        <button class="absolute top-6 right-6 text-white/70 hover:text-white text-5xl font-light transition-colors"
-            onclick="closeLightbox()">&times;</button>
-        <div class="max-w-[90vw] max-h-[85vh] relative" onclick="event.stopPropagation()">
-            <img id="lightbox-img" src="" alt="Imagen ampliada"
-                class="w-full h-full object-contain rounded-lg shadow-2xl border border-white/10">
-            <div id="lightbox-caption" class="text-center mt-4 text-slate-300 font-medium text-sm tracking-wide"></div>
-        </div>
-    </div>
+
 
     <!-- # endregion -->
 
@@ -767,6 +761,16 @@
                                 <p class="text-lg font-bold">+34 650 841 541</p>
                             </div>
                         </div>
+                        <div class="flex items-center gap-6 group">
+                            <div
+                                class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform text-white">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-black uppercase tracking-widest text-slate-500">Email</p>
+                                <p class="text-lg font-bold">imperviera@gmail.com</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -774,20 +778,20 @@
                     <form id="contactForm" class="space-y-6">
                         <div class="grid md:grid-cols-2 gap-6">
                             <div class="space-y-2">
-                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Tu
+                                <label for="nombre" class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Tu
                                     nombre</label>
-                                <input type="text" placeholder="Ej. Juan Pérez"
+                                <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required
                                     class="w-full bg-slate-50 border-0 p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#0081C9] transition-all">
                             </div>
                             <div class="space-y-2">
-                                <label
+                                <label for="email"
                                     class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Email</label>
-                                <input type="email" placeholder="hola@ejemplo.com"
+                                <input type="email" id="email" name="email" placeholder="hola@ejemplo.com" required
                                     class="w-full bg-slate-50 border-0 p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#0081C9] transition-all">
                             </div>
                         </div>
                         <div class="space-y-2">
-                            <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">¿Qué
+                            <label for="servicio" class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">¿Qué
                                 necesitas?</label>
                             <select aria-label="Tipo de servicio necesario" class="w-full bg-slate-50 border-0 p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#0081C9] transition-all text-slate-500">
                                 <option>Impermeabilizar Piscina</option>
@@ -797,9 +801,9 @@
                             </select>
                         </div>
                         <div class="space-y-2">
-                            <label
+                            <label for="mensaje"
                                 class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Mensaje</label>
-                            <textarea rows="4" placeholder="Cuéntanos los detalles de la superficie..."
+                            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos los detalles de la superficie..." required
                                 class="w-full bg-slate-50 border-0 p-4 rounded-xl outline-none focus:ring-2 focus:ring-[#0081C9] transition-all"></textarea>
                         </div>
                         <button type="submit"
@@ -812,6 +816,8 @@
         </div>
     </section>
     <!-- # endregion -->
+
+    </main>
 
     <!-- # ========================================== -->
     <!-- # region FOOTER -->
@@ -832,18 +838,18 @@
                 <div>
                     <h5 class="text-[10px] font-black uppercase tracking-widest text-blue-400 mb-6">Enlaces</h5>
                     <ul class="space-y-4 text-sm text-slate-400">
-                        <li><a href="#" class="hover:text-white transition-colors">Servicios</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Galería de Trabajos</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Sobre nosotros</a></li>
+                        <li><a href="#servicios" class="hover:text-white transition-colors">Servicios</a></li>
+                        <li><a href="#proyectos" class="hover:text-white transition-colors">Galería de Trabajos</a></li>
+                        <li><a href="#contacto" class="hover:text-white transition-colors">Contacto</a></li>
                     </ul>
                 </div>
                 <div>
                     <h5 class="text-[10px] font-black uppercase tracking-widest text-blue-400 mb-6">Social</h5>
                     <div class="flex gap-4">
-                        <a href="#"
+                        <a href="#" aria-label="Facebook de Imperviera"
                             class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-blue-600 transition-all"><i
                                 class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"
+                        <a href="#" aria-label="Instagram de Imperviera"
                             class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-blue-600 transition-all"><i
                                 class="fa-brands fa-instagram"></i></a>
                     </div>
@@ -866,7 +872,7 @@
     <!-- # region ASISTENTE IA (GEMINI) -->
     <!-- # ========================================== -->
     <!-- Botón Flotante -->
-    <button id="ai-toggle"
+    <button id="ai-toggle" aria-label="Abrir asistente técnico" aria-controls="ai-chat-window"
         class="fixed bottom-8 right-8 bg-[#0081C9] text-white w-16 h-16 rounded-2xl shadow-2xl z-[100] flex items-center justify-center hover:scale-110 transition-transform active:scale-95 group">
         <i class="fa-solid fa-robot text-2xl group-hover:rotate-12 transition-transform"></i>
         <span class="absolute -top-2 -left-2 flex h-5 w-5">
@@ -876,7 +882,7 @@
     </button>
 
     <!-- Ventana de Chat -->
-    <div id="ai-chat-window"
+    <div id="ai-chat-window" role="dialog" aria-modal="true" aria-label="Chat con asistente técnico"
         class="fixed bottom-28 right-8 w-[350px] bg-white rounded-3xl shadow-2xl z-[100] border border-slate-100 hidden flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-300">
         <div class="bg-slate-900 text-white p-6 flex justify-between items-center">
             <div class="flex items-center gap-3">
@@ -888,11 +894,11 @@
                     <span class="text-[10px] text-green-400 font-bold">Online ahora</span>
                 </div>
             </div>
-            <button id="ai-close" class="text-slate-400 hover:text-white transition-colors"><i
+            <button id="ai-close" aria-label="Cerrar asistente" class="text-slate-400 hover:text-white transition-colors"><i
                     class="fa-solid fa-xmark text-xl"></i></button>
         </div>
 
-        <div id="ai-messages" class="h-[400px] overflow-y-auto p-6 space-y-4 text-sm bg-slate-50 scroll-smooth">
+        <div id="ai-messages" aria-live="polite" aria-label="Mensajes del chat" class="h-[400px] overflow-y-auto p-6 space-y-4 text-sm bg-slate-50 scroll-smooth">
             <div
                 class="bg-white p-4 rounded-2xl rounded-tl-none text-slate-700 shadow-sm border border-slate-100 max-w-[85%]">
                 <p class="font-bold mb-1 text-blue-600">Imperviera Bot</p>
@@ -903,7 +909,7 @@
 
         <div class="p-6 bg-white border-t border-slate-100">
             <div class="flex gap-2 bg-slate-100 p-2 rounded-2xl">
-                <input type="text" id="ai-input" placeholder="Escribe tu duda técnica..."
+                <input type="text" id="ai-input" aria-label="Escribe tu pregunta" placeholder="Escribe tu duda técnica..."
                     class="flex-1 text-sm outline-none bg-transparent px-3 py-2 font-medium">
                 <button id="ai-send"
                     class="bg-[#0081C9] text-white w-10 h-10 rounded-xl hover:bg-blue-700 transition-all flex items-center justify-center shadow-lg shadow-blue-100">

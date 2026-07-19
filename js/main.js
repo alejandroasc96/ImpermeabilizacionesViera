@@ -1,60 +1,57 @@
+        const ITEMS_VISIBLE_DEFAULT = 3;
+        let galleryExpanded = false;
+
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const icon = document.getElementById('menu-icon');
+            const btn = document.getElementById('menu-btn');
+            const isOpen = menu.classList.contains('max-h-[400px]');
 
-            if (menu.classList.contains('max-h-0')) {
-                menu.classList.remove('max-h-0');
-                menu.classList.add('max-h-[400px]');
-
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            } else {
+            if (isOpen) {
                 menu.classList.remove('max-h-[400px]');
                 menu.classList.add('max-h-0');
-
                 icon.classList.remove('fa-xmark');
                 icon.classList.add('fa-bars');
+                btn.setAttribute('aria-expanded', 'false');
+                btn.setAttribute('aria-label', 'Abrir menú');
+            } else {
+                menu.classList.remove('max-h-0');
+                menu.classList.add('max-h-[400px]');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+                btn.setAttribute('aria-expanded', 'true');
+                btn.setAttribute('aria-label', 'Cerrar menú');
             }
         }
 
-        // Variable global para controlar si el usuario expandió manualmente la sección en móvil
-        let mobileExpanded = false;
+        function getActiveCategory() {
+            const activeBtn = document.querySelector('.filter-btn.active');
+            return activeBtn ? activeBtn.getAttribute('onclick').match(/'([^']+)'/)[1] : 'todos';
+        }
 
-        function filterGallery(category, isExpandingCall = false) {
+        function filterGallery(category) {
             const items = document.querySelectorAll('.gallery-item');
             const buttons = document.querySelectorAll('.filter-btn');
 
-            // 1. Gestionar estados visuales de los botones de filtrado
             buttons.forEach(btn => {
                 if (btn.getAttribute('onclick').includes(category)) {
                     btn.classList.add('active', 'bg-blue-600', 'text-white');
                     btn.classList.remove('bg-white/5', 'text-slate-300');
+                    btn.setAttribute('aria-pressed', 'true');
                 } else {
                     btn.classList.remove('active', 'bg-blue-600', 'text-white');
                     btn.classList.add('bg-white/5', 'text-slate-300');
+                    btn.setAttribute('aria-pressed', 'false');
                 }
             });
 
-            if (!isExpandingCall) {
-                mobileExpanded = false;
-                const btnText = document.getElementById('btn-text');
-                const btnIcon = document.getElementById('btn-icon');
-                if (btnText && btnIcon) {
-                    btnText.innerText = "Ver más proyectos";
-                    btnIcon.className = "fa-solid fa-chevron-down text-xs";
-                }
-            }
-
-            let visibleCount = 0;
-            const isMobile = window.innerWidth < 768;
-
+            let matchCount = 0;
             items.forEach(item => {
                 const matchCondition = category === 'todos' || item.classList.contains(category);
 
                 if (matchCondition) {
-                    visibleCount++;
-
-                    if (isMobile && visibleCount > 3 && !mobileExpanded) {
+                    matchCount++;
+                    if (!galleryExpanded && matchCount > ITEMS_VISIBLE_DEFAULT) {
                         item.classList.add('hidden');
                     } else {
                         item.classList.remove('hidden');
@@ -66,45 +63,37 @@
                 item.style.display = ''; 
             });
 
-            const loadMoreContainer = document.getElementById('load-more-container');
-            if (loadMoreContainer) {
-                if (isMobile && visibleCount > 3) {
-                    loadMoreContainer.classList.remove('hidden');
+            updateToggleBtn(matchCount);
+        }
 
-                    if (mobileExpanded) {
-                        loadMoreContainer.classList.remove('bg-gradient-to-t', 'from-slate-900', 'via-slate-900/95');
-                        loadMoreContainer.classList.add('absolute', 'bottom-[-70px]');
-                        document.getElementById('proyectos').classList.add('pb-20');
-                    } else {
-                        loadMoreContainer.classList.add('bg-gradient-to-t', 'from-slate-900', 'via-slate-900/95');
-                        loadMoreContainer.classList.remove('absolute', 'bottom-[-70px]');
-                    }
+        function updateToggleBtn(totalVisible) {
+            const btn = document.getElementById('btn-toggle-gallery');
+            const btnText = document.getElementById('gallery-btn-text');
+            const btnIcon = document.getElementById('gallery-btn-icon');
+
+            if (!btn) return;
+
+            if (totalVisible <= ITEMS_VISIBLE_DEFAULT) {
+                btn.classList.add('hidden');
+            } else {
+                btn.classList.remove('hidden');
+                if (galleryExpanded) {
+                    btnText.innerText = 'Ver menos';
+                    btnIcon.classList.add('rotate-180');
                 } else {
-                    loadMoreContainer.classList.add('hidden');
+                    btnText.innerText = 'Ver todas las fotos';
+                    btnIcon.classList.remove('rotate-180');
                 }
             }
         }
 
-        function toggleMobileItems() {
-            const btnText = document.getElementById('btn-text');
-            const btnIcon = document.getElementById('btn-icon');
+        function toggleGallery() {
+            galleryExpanded = !galleryExpanded;
+            filterGallery(getActiveCategory());
 
-            mobileExpanded = !mobileExpanded;
-
-            if (mobileExpanded) {
-                if (btnText) btnText.innerText = "Ver menos";
-                if (btnIcon) btnIcon.classList.add('rotate-180');
-            } else {
-                if (btnText) btnText.innerText = "Ver más";
-                if (btnIcon) btnIcon.classList.remove('rotate-180');
-
+            if (!galleryExpanded) {
                 document.getElementById('proyectos').scrollIntoView({ behavior: 'smooth' });
             }
-
-            const activeBtn = document.querySelector('.filter-btn.active');
-            const currentCategory = activeBtn ? activeBtn.getAttribute('onclick').match(/'([^']+)'/)[1] : 'todos';
-
-            filterGallery(currentCategory, true);
         }
 
         document.addEventListener("DOMContentLoaded", () => {
@@ -112,11 +101,8 @@
         });
 
         window.addEventListener('resize', () => {
-            const activeBtn = document.querySelector('.filter-btn.active');
-            const currentCategory = activeBtn ? activeBtn.getAttribute('onclick').match(/'([^']+)'/)[1] : 'todos';
-            filterGallery(currentCategory);
+            filterGallery(getActiveCategory());
         });
-
 
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
@@ -130,7 +116,6 @@
                 this.reset();
             });
         }
-
 
         function openLightbox(element) {
             const lightbox = document.getElementById('lightbox');

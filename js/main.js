@@ -59,6 +59,8 @@
                 } else {
                     item.classList.add('hidden');
                 }
+                
+                item.style.display = ''; 
             });
 
             updateToggleBtn(matchCount);

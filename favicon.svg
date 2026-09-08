@@ -1,0 +1,53 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Gradiente de fondo principal -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#0081C9"/>
+      <stop offset="100%" stop-color="#034E7B"/>
+    </linearGradient>
+
+    <!-- Gradiente de la gota/resina -->
+    <linearGradient id="drop-grad" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="60%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+
+    <!-- Gradiente para el cuerpo de la I y capas -->
+    <linearGradient id="white-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+
+    <!-- Sombra sutil -->
+    <filter id="drop-shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#002138" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Contenedor / Base squircle estilo app icon moderno -->
+  <rect width="512" height="512" rx="112" fill="url(#bg-grad)"/>
+
+  <!-- Borde interior sutil y brillante -->
+  <rect x="6" y="6" width="500" height="500" rx="106" fill="none" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="4"/>
+
+  <!-- Grupo del isotipo central con sombra -->
+  <g filter="url(#drop-shadow)">
+    <!-- Punto / Gota superior que corona la letra I -->
+    <path d="M 256 95 C 256 95 304 150 304 185 C 304 211.5 282.5 233 256 233 C 229.5 233 208 211.5 208 185 C 208 150 256 95 256 95 Z" fill="#38BDF8"/>
+    <path d="M 248 135 C 248 135 230 165 230 185 C 230 195 236 205 244 210 C 236 200 238 180 248 160 Z" fill="#FFFFFF" opacity="0.6"/>
+
+    <!-- Pilar / Cuerpo de la I -->
+    <rect x="216" y="255" width="80" height="155" rx="20" fill="url(#white-grad)"/>
+
+    <!-- Detalle dinámico de capa de sellado / onda de resina en el pilar -->
+    <path d="M 216 345 C 240 335 272 360 296 345 L 296 390 C 296 401 287 410 276 410 L 236 410 C 225 410 216 401 216 390 Z" fill="#0284C7" opacity="0.22"/>
+
+    <!-- Escudo de protección lateral derecho -->
+    <path d="M 320 280 C 345 305 352 345 330 380" fill="none" stroke="#38BDF8" stroke-width="12" stroke-linecap="round" opacity="0.75"/>
+
+    <!-- Escudo de protección lateral izquierdo -->
+    <path d="M 192 280 C 167 305 160 345 182 380" fill="none" stroke="#38BDF8" stroke-width="12" stroke-linecap="round" opacity="0.75"/>
+  </g>
+</svg>

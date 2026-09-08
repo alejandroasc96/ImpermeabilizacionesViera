@@ -223,3 +223,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Virtual Environments & Local Binaries
+.venv/
+env/
+venv/
+ENV/
+*.exe
+tailwind.exe

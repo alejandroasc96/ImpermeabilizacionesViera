@@ -94,3 +94,31 @@
          transform: translateX(-50%);
      }
  }
+
+/* ==========================================
+   LOGO NAVEGACIÓN
+========================================== */
+.nav-logo {
+    height: 40px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.group:hover .nav-logo {
+    transform: scale(1.03);
+}
+
+@media (min-width: 640px) {
+    .nav-logo {
+        height: 46px;
+        max-width: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .nav-logo {
+        height: 50px;
+    }
+}

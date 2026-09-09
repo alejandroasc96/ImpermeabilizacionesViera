@@ -21,3 +21,25 @@
         height: 50px;
     }
 }
+
+/* ==========================================
+   LOGO FOOTER
+========================================== */
+.footer-logo {
+    height: 42px;
+    width: auto;
+    max-width: 240px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.group:hover .footer-logo {
+    transform: scale(1.03);
+}
+
+@media (min-width: 640px) {
+    .footer-logo {
+        height: 48px;
+        max-width: none;
+    }
+}
